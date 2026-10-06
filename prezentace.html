@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Osobnosti Informatiky – Gymnáziální Katalog</title>
+  <title>Osobnosti Informatiky – Statický Katalog</title>
   <style>
     :root {
       --bg-color: #0f172a;
@@ -31,7 +31,7 @@
     header {
       text-align: center;
       max-width: 900px;
-      margin: 0 auto 2.5rem auto;
+      margin: 0 auto 3rem auto;
     }
 
     h1 {
@@ -43,62 +43,39 @@
     p.subtitle {
       color: var(--text-muted);
       font-size: 1.1rem;
-      margin-bottom: 1.5rem;
     }
 
-    .search-box {
-      width: 100%;
-      max-width: 500px;
-      padding: 0.8rem 1.2rem;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      background-color: var(--card-bg);
-      color: var(--text-main);
-      font-size: 1rem;
-      outline: none;
-      transition: border-color 0.2s;
-    }
-
-    .search-box:focus {
-      border-color: var(--accent);
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-      gap: 1.5rem;
-      max-width: 1400px;
+    .catalog-container {
+      max-width: 1000px;
       margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
     }
 
-    .card {
+    .person-card {
       background-color: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 12px;
-      overflow: hidden;
+      padding: 1.8rem;
       display: flex;
       flex-direction: row;
-      align-items: stretch;
-      transition: transform 0.2s, border-color 0.2s;
-      cursor: pointer;
+      gap: 1.8rem;
+      align-items: flex-start;
     }
 
-    .card:hover {
-      transform: translateY(-3px);
-      border-color: var(--accent);
-    }
-
-    .card-img-container {
-      width: 130px;
-      min-width: 130px;
+    .person-img-container {
+      width: 160px;
+      min-width: 160px;
+      height: 200px;
+      border-radius: 8px;
+      overflow: hidden;
       background-color: #0f172a;
       flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      border: 1px solid var(--border);
     }
 
-    .card-img {
+    .person-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -106,118 +83,54 @@
       display: block;
     }
 
-    .card-content {
-      padding: 1.2rem;
+    .person-info {
+      flex-grow: 1;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      flex-grow: 1;
+      gap: 0.8rem;
     }
 
-    .card-title {
-      font-size: 1.2rem;
+    .person-name {
+      font-size: 1.5rem;
       font-weight: 700;
       color: var(--accent);
-      margin-bottom: 0.4rem;
     }
 
-    .card-highlight {
+    .person-highlight {
+      font-size: 1.05rem;
       font-weight: 600;
       font-style: italic;
       color: #e2e8f0;
-      margin-bottom: 0.6rem;
-      font-size: 0.9rem;
-      line-height: 1.3;
+      border-left: 3px solid var(--accent);
+      padding-left: 0.8rem;
+      margin-bottom: 0.4rem;
     }
 
-    .card-medailonek {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-
-    /* Modal dialog */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
-      backdrop-filter: blur(4px);
-      z-index: 1000;
-      justify-content: center;
-      align-items: center;
-      padding: 1rem;
-    }
-
-    .modal-content {
-      background-color: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      max-width: 700px;
-      width: 100%;
-      max-height: 90vh;
-      overflow-y: auto;
-      padding: 2rem;
-      position: relative;
-    }
-
-    .close-btn {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      background: none;
-      border: none;
-      color: var(--text-muted);
-      font-size: 1.8rem;
-      cursor: pointer;
-    }
-
-    .close-btn:hover {
-      color: var(--accent);
-    }
-
-    .modal-header {
-      display: flex;
-      gap: 1.5rem;
-      margin-bottom: 1.5rem;
-      align-items: center;
-    }
-
-    .modal-img {
-      width: 110px;
-      height: 110px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid var(--accent);
-      flex-shrink: 0;
-    }
-
-    .modal-title-area h2 {
-      color: var(--accent);
-      font-size: 1.6rem;
-    }
-
-    .modal-section {
-      margin-bottom: 1.2rem;
-    }
-
-    .modal-section h3 {
-      font-size: 1.05rem;
-      color: #e2e8f0;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 0.3rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .modal-section p {
+    .section-block {
       font-size: 0.95rem;
+    }
+
+    .section-title {
+      font-weight: 700;
+      color: #cbd5e1;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.2rem;
+    }
+
+    .section-text {
       color: var(--text-muted);
+    }
+
+    @media (max-width: 650px) {
+      .person-card {
+        flex-direction: column;
+      }
+      .person-img-container {
+        width: 100%;
+        height: 240px;
+      }
     }
   </style>
 </head>
@@ -225,76 +138,495 @@
 
   <header>
     <h1>Osobnosti Informatiky a Výpočetní Vědy</h1>
-    <p class="subtitle">Katalog významných osobností pro 1. ročník gymnázia</p>
-    <input type="text" id="searchInput" class="search-box" placeholder="Vyhledat podle jména nebo klíčového slova...">
+    <p class="subtitle">Přehledový katalog pro 1. ročník gymnázia</p>
   </header>
 
-  <main class="grid" id="cardsGrid"></main>
+  <main class="catalog-container">
 
-  <div class="modal" id="detailModal">
-    <div class="modal-content">
-      <button class="close-btn" onclick="closeModal()">&times;</button>
-      <div class="modal-header">
-        <img id="modalImg" class="modal-img" src="" alt="" referrerpolicy="no-referrer">
-        <div class="modal-title-area">
-          <h2 id="modalName"></h2>
-          <p id="modalHighlight" style="font-style: italic; color: #cbd5e1; font-size: 0.95rem; margin-top: 0.3rem;"></p>
+    <!-- 1. Frances Allen -->
+    <article class="person-card">
+      <div class="person-img-container">
+        <img class="person-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Fran_Allen_Turing_Award.jpg?width=400" alt="Frances Allen" loading="lazy" referrerpolicy="no-referrer">
+      </div>
+      <div class="person-info">
+        <h2 class="person-name">1. Frances Allen</h2>
+        <div class="person-highlight">"První ženská držitelka Turingovy ceny, která naučila počítače pracovat efektivně bez zásahu lidí."</div>
+        <div class="section-block">
+          <div class="section-title">Medailonek</div>
+          <div class="section-text">Výzkumnice v IBM a průkopnice v oblasti optimalizace překladačů a paralelního zpracování kódu.</div>
+        </div>
+        <div class="section-block">
+          <div class="section-title">Vědecké a technické milníky</div>
+          <div class="section-text">Teoretické základy optimalizace překladačů (compilers) a automatického paralelního zpracování kódu.</div>
+        </div>
+        <div class="section-block">
+          <div class="section-title">Společenský a biografický kontext</div>
+          <div class="section-text">V IBM začínala jako učitelka FORTRANu. Dokázala, že lidsky čitelný vysokoúrovňový kód může na daném hardwaru běžet stejně rychle jako kód psaný přímo ve strojovém jazyce.</div>
         </div>
       </div>
-      <div class="modal-section">
-        <h3>Medailonek</h3>
-        <p id="modalMedailonek"></p>
-      </div>
-      <div class="modal-section">
-        <h3>Vědecké a technické milníky</h3>
-        <p id="modalMilniky"></p>
-      </div>
-      <div class="modal-section">
-        <h3>Vědecké milníky a společenský kontext</h3>
-        <p id="modalKontext"></p>
-      </div>
-    </div>
-  </div>
+    </article>
 
-  <script>
-    const fallbackSVG = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='1.5'><path d='M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2'/><circle cx='12' cy='7' r='4'/></svg>";
+    <!-- 2. Charles Babbage -->
+    <article class="person-card">
+      <div class="person-img-container">
+        <img class="person-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Charles_Babbage_-_1860.jpg?width=400" alt="Charles Babbage" loading="lazy" referrerpolicy="no-referrer">
+      </div>
+      <div class="person-info">
+        <h2 class="person-name">2. Charles Babbage</h2>
+        <div class="person-highlight">"Kverulantský génius, který navrhl mechanický počítač o velikosti lokomotivy poháněný parou."</div>
+        <div class="section-block">
+          <div class="section-title">Medailonek</div>
+          <div class="section-text">Britský matematik a profesor z Cambridge, konstruktér prvních mechanických počítacích strojů.</div>
+        </div>
+        <div class="section-block">
+          <div class="section-title">Vědecké a technické milníky</div>
+          <div class="section-text">Diferenční a Analytický stroj – první mechanická architektura počítače s oddělenou pamětí a procesorem.</div>
+        </div>
+        <div class="section-block">
+          <div class="section-title">Společenský a biografický kontext</div>
+          <div class="section-text">Znechucen chybovostí lidských kalkulátorů v astronomických tabulkách se dostal do sporů s britskou vládou. Kvůli limitům tehdejšího strojírenství stroj za svého života nedokončil.</div>
+        </div>
+      </div>
+    </article>
 
-    const data = [
-      {
-        name: "Frances Allen",
-        highlight: "První ženská držitelka Turingovy ceny, která naučila počítače pracovat efektivně bez zásahu lidí.",
-        medailonek: "Výzkumnice v IBM a průkopnice v oblasti optimalizace překladačů a paralelního zpracování kódu.",
-        milniky: "Teoretické základy optimalizace překladačů (compilers) a automatického paralelního zpracování kódu.",
-        kontext: "V IBM začínala jako učitelka FORTRANu. Dokázala, že lidsky čitelný vysokoúrovňový kód může na daném hardwaru běžet stejně rychle jako kód psaný přímo ve strojovém jazyce.",
-        img: "https://commons.wikimedia.org/wiki/Special:FilePath/Fran_Allen_Turing_Award.jpg?width=400"
-      },
-      {
-        name: "Charles Babbage",
-        highlight: "Kverulantský génius, který navrhl mechanický počítač o velikosti lokomotivy poháněný parou.",
-        medailonek: "Britský matematik a profesor z Cambridge, konstruktér prvních mechanických počítacích strojů.",
-        milniky: "Diferenční a Analytický stroj – první mechanická architektura počítače s oddělenou pamětí a procesorem.",
-        kontext: "Znechucen chybovostí lidských kalkulátorů v astronomických tabulkách se dostal do sporů s britskou vládou. Kvůli limitům tehdejšího strojírenství stroj za svého života nedokončil.",
-        img: "https://commons.wikimedia.org/wiki/Special:FilePath/Charles_Babbage_-_1860.jpg?width=400"
-      },
-      {
-        name: "Tim Berners-Lee",
-        highlight: "Vynálezce World Wide Webu, který ze svého nápadu nevydělal ani cent a dal ho světu zadarmo.",
-        medailonek: "Britský inženýr z CERNu, autor protokolů HTTP, jazyka HTML a adresování URL.",
-        milniky: "Návrh prvního webového serveru, prohlížeče a konceptu hyperlinked informací World Wide Web (1989).",
-        kontext: "Odmítl si technologii patentovat a prosadil, aby CERN uvolnil kód WWW bez licenčních poplatků bezplatně pro celý svět.",
-        img: "https://commons.wikimedia.org/wiki/Special:FilePath/Sir_Tim_Berners-Lee_(cropped).jpg?width=400"
-      },
-      {
-        name: "John Carmack",
-        highlight: "Legendární vývojář, který definoval 3D grafiku v počítačových hrách a upřednostnil kód před vším ostatním.",
-        medailonek: "Hlavní programátor id Software, autor klíčových grafických algoritmů pro akční hry z pohledu první osoby.",
-        milniky: "Raycasting (Wolfenstein 3D), BSP stromy (Doom), 3D světelné mapy a PVS (Quake).",
-        kontext: "Zásadně ovlivnil herní průmysl otevřeností a zaměřením na výkon. Jeho nekompromisní pracovní nasazení vedlo ke konfliktům a rozpadu ikonického týmu id Software.",
-        img: "https://commons.wikimedia.org/wiki/Special:FilePath/John_Carmack_at_QuakeCon_2017.jpg?width=400"
-      },
-      {
-        name: "Edgar F. Codd",
-        highlight: "Vědec z IBM, jehož převratný nápad firma roky tajila, protože by jí zkazil prodej starších databází.",
-        medailonek: "Britsko-americký matematický vědec a tvůrce relační teorie databází.",
-        milniky: "Relační model databází (organizace dat do tabulek propojených klíči) a teoretický základ pro jazyk SQL.",
-        kontext: "IBM jeho objev zpočátku blokovala kvůli prodeji starších systémů IMS. Codd koncept publikoval samostatně a přinutil celý průmysl změnit
+    <!-- 3. Tim Berners-Lee -->
+    <article class="person-card">
+      <div class="person-img-container">
+        <img class="person-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Sir_Tim_Berners-Lee_(cropped).jpg?width=400" alt="Tim Berners-Lee" loading="lazy" referrerpolicy="no-referrer">
+      </div>
+      <div class="person-info">
+        <h2 class="person-name">3. Tim Berners-Lee</h2>
+        <div class="person-highlight">"Vynálezce World Wide Webu, který ze svého nápadu nevydělal ani cent a dal ho světu zadarmo."</div>
+        <div class="section-block">
+          <div class="section-title">Medailonek</div>
+          <div class="section-text">Britský inženýr z CERNu, autor protokolů HTTP, jazyka HTML a adresování URL.</div>
+        </div>
+        <div class="section-block">
+          <div class="section-title">Vědecké a technické milníky</div>
+          <div class="section-text">Návrh prvního webového serveru, prohlížeče a konceptu hyperlinked informací World Wide Web (1989).</div>
+        </div>
+        <div class="section-block">
+          <div class="section-title">Společenský a biografický kontext</div>
+          <div class="section-text">Odmítl si technologii patentovat a prosadil, aby CERN uvolnil kód WWW bez licenčních poplatků bezplatně pro celý svět.</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 4. John Carmack -->
+    <article class="person-card">
+      <div class="person-img-container">
+        <img class="person-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/John_Carmack_at_QuakeCon_2017.jpg?width=400" alt="John Carmack" loading="lazy" referrerpolicy="no-referrer">
+      </div>
+      <div class="person-info">
+        <h2 class="person-name">4. John Carmack</h2>
+        <div class="person-highlight">"Legendární vývojář, který definoval 3D grafiku v počítačových hrách a upřednostnil kód před vším ostatním."</div>
+        <div class="section-block">
+          <div class="section-title">Medailonek</div>
+          <div class="section-text">Hlavní programátor id Software, autor klíčových grafických algoritmů pro akční hry z pohledu první osoby.</div>
+        </div>
+        <div class="section-block">
+          <div class="section-title">Vědecké a technické milníky</div>
+          <div class="section-text">Raycasting (Wolfenstein 3D), BSP stromy (Doom), 3D světelné mapy a PVS (Quake).</div>
+        </div>
+        <div class="section-block">
+          <div class="section-title">Společenský a biografický kontext</div>
+          <div class="section-text">Zásadně ovlivnil herní průmysl otevřeností a zaměřením na výkon. Jeho nekompromisní pracovní nasazení vedlo ke konfliktům a rozpadu ikonického týmu id Software.</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 5. Edgar F. Codd -->
+    <article class="person-card">
+      <div class="person-img-container">
+        <img class="person-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Edgar_F_Codd.jpg?width=400" alt="Edgar F. Codd" loading="lazy" referrerpolicy="no-referrer">
+      </div>
+      <div class="person-info">
+        <h2 class="person-name">5. Edgar F. Codd</h2>
+        <div class="person-highlight">"Vědec z IBM, jehož převratný nápad firma roky tajila, protože by jí zkazil prodej starších databází."</div>
+        <div class="section-block">
+          <div class="section-title">Medailonek</div>
+          <div class="section-text">Britsko-americký matematický vědec a tvůrce relační teorie databází.</div>
+        </div>
+        <div class="section-block">
+          <div class="section-title">Vědecké a technické milníky</div>
+          <div class="section-text">Relační model databází (organizace dat do tabulek propojených klíči) a teoretický základ pro jazyk SQL.</div>
+        </div>
+        <div class="section-block">
+          <div class="section-title">Společenský a biografický kontext</div>
+          <div class="section-text">IBM jeho objev zpočátku blokovala kvůli prodeji starších systémů IMS. Codd koncept publikoval samostatně a přinutil celý průmysl změnit směrování.</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 6. Margaret Hamilton -->
+    <article class="person-card">
+      <div class="person-img-container">
+        <img class="person-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Margaret_Hamilton_-_Restoration.jpg?width=400" alt="Margaret Hamilton" loading="lazy" referrerpolicy="no-referrer">
+      </div>
+      <div class="person-info">
+        <h2 class="person-name">6. Margaret Hamilton</h2>
+        <div class="person-highlight">"Žena, jejíž ručně psaný kód zachránil přistání na Měsíci a dala oboru název softwarové inženýrství."</div>
+        <div class="section-block">
+          <div class="section-title">Medailonek</div>
+          <div class="section-text">Ředitelka softwarového inženýrství v MIT Instrumentation Lab pro vesmírný program Apollo.</div>
+        </div>
+        <div class="section-block">
+          <div class="section-title">Vědecké a technické milníky</div>
+          <div class="section-text">Architektura asynchronního zpracování, prioritizace úloh (priority scheduling) v palubním počítači Apolla 11.</div>
+        </div>
+        <div class="section-block">
+          <div class="section-title">Společenský a biografický kontext</div>
+          <div class="section-text">Prosadila termín Software Engineering jako plnohodnotný vědní obor. Ikonická je fotografie, kde stojí vedle stohu tištěného kódu vyššího než ona sama.</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 7. Geoffrey Hinton -->
+    <article class="person-card">
+      <div class="person-img-container">
+        <img class="person-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Geoffrey_Hinton_at_University_of_Toronto_(cropped).jpg?width=400" alt="Geoffrey Hinton" loading="lazy" referrerpolicy="no-referrer">
+      </div>
+      <div class="person-info">
+        <h2 class="person-name">7. Geoffrey Hinton</h2>
+        <div class="person-highlight">"„Kmotr hlubokého učení“, kterému se desítky let všichni vysmívali za věrnost neuronovým sítím – až za ně dostal Nobelovu cenu."</div>
+        <div class="section-block">
+          <div class="section-title">Medailonek</div>
+          <div class="section-text">Kognitivní psycholog a počítačový vědec z University of Toronto, držitel Nobelovy ceny za fyziku (2024).</div>
+        </div>
+        <div class="section-block">
+          <div class="section-title">Vědecké a technické milníky</div>
+          <div class="section-text">Algoritmus zpětného šíření chyby (backpropagation) pro trénování vícevrstvých neuronových sítí.</div>
+        </div>
+        <div class="section-block">
+          <div class="section-title">Společenský a biografický kontext</div>
+          <div class="section-text">Desítky let čelil skepsi akademické obce. Po průlomu v AI opustil pozice v průmyslu, aby se věnoval varováním před riziky nekontrolovaného vývoje AI.</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 8. Grace Hopper -->
+    <article class="person-card">
+      <div class="person-img-container">
+        <img class="person-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Commodore_Grace_M._Hopper,_USN_(uncovered).jpg?width=400" alt="Grace Hopper" loading="lazy" referrerpolicy="no-referrer">
+      </div>
+      <div class="person-info">
+        <h2 class="person-name">8. Grace Hopper</h2>
+        <div class="person-highlight">"Prababička COBOLu, která našla první skutečný „bug“ a naučila počítače rozumět angličtině."</div>
+        <div class="section-block">
+          <div class="section-title">Medailonek</div>
+          <div class="section-text">Kontradmirálka US Navy a matematička z Yale, průkopnice prvních kompilátorů.</div>
+        </div>
+        <div class="section-block">
+          <div class="section-title">Vědecké a technické milníky</div>
+          <div class="section-text">Vynález prvního kompilátoru (A-0) a spolutvorba vyššího programovacího jazyka COBOL.</div>
+        </div>
+        <div class="section-block">
+          <div class="section-title">Společenský a biografický kontext</div>
+          <div class="section-text">Zpopularizovala termín debugging vytažením můry z relé počítače Harvard Mark II. Bojovala za to, aby programování nebylo výsadou matematiků píšících strojový kód.</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 9. Mary Jackson -->
+    <article class="person-card">
+      <div class="person-img-container">
+        <img class="person-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Mary_Jackson_computing.jpg?width=400" alt="Mary Jackson" loading="lazy" referrerpolicy="no-referrer">
+      </div>
+      <div class="person-info">
+        <h2 class="person-name">9. Mary Jackson</h2>
+        <div class="person-highlight">"První inženýrka tmavé pleti v NASA, která si právo na studium musela vybojovat u soudu."</div>
+        <div class="section-block">
+          <div class="section-title">Medailonek</div>
+          <div class="section-text">Matematička a letecká inženýrka pracující na aerodynamických tunelech v NASA.</div>
+        </div>
+        <div class="section-block">
+          <div class="section-title">Vědecké a technické milníky</div>
+          <div class="section-text">Analýza stlačitelnosti vzduchu a aerodynamiky při nadzvukových rychlostech.</div>
+        </div>
+        <div class="section-block">
+          <div class="section-title">Společenský a biografický kontext</div>
+          <div class="section-text">Aby získala inženýrskou kvalifikaci, zažalovala město a získala soudní povolení navštěvovat večerní kurzy na střední škole určené výhradně pro bělochy.</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 10. Katherine Johnson -->
+    <article class="person-card">
+      <div class="person-img-container">
+        <img class="person-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Katherine_Johnson_1950s.jpg?width=400" alt="Katherine Johnson" loading="lazy" referrerpolicy="no-referrer">
+      </div>
+      <div class="person-info">
+        <h2 class="person-name">10. Katherine Johnson</h2>
+        <div class="person-highlight">"Lidský počítač, bez jehož ručních výpočtů odmítl astronaut John Glenn odstartovat do vesmíru."</div>
+        <div class="section-block">
+          <div class="section-title">Medailonek</div>
+          <div class="section-text">Matematická fyzička v NASA, autorka výpočtů trajektorií pro pilotované lety do vesmíru.</div>
+        </div>
+        <div class="section-block">
+          <div class="section-title">Vědecké a technické milníky</div>
+          <div class="section-text">Výpočty orbitálních drah pro projekty Mercury a Apollo 11, ruční záložní výpočty pro Apollo 13.</div>
+        </div>
+        <div class="section-block">
+          <div class="section-title">Společenský a biografický kontext</div>
+          <div class="section-text">Jako černošská žena čelila dvojí segregaci. Astronaut John Glenn trval na tom, aby Katherine ručně ověřila výpočty z nového počítače IBM před jeho startem.</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 11. Donald Knuth -->
+    <article class="person-card">
+      <div class="person-img-container">
+        <img class="person-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/KnuthAtComputer.jpg?width=400" alt="Donald Knuth" loading="lazy" referrerpolicy="no-referrer">
+      </div>
+      <div class="person-info">
+        <h2 class="person-name">11. Donald Knuth</h2>
+        <div class="person-highlight">"Počítačový gigant, který vymyslel celosvětový standard pro elektronickou sazbu matematiky (TeX) jen proto, že byl nespokojen s grafikou vlastních skript."</div>
+        <div class="section-block">
+          <div class="section-title">Medailonek</div>
+          <div class="section-text">Profesor ze Stanfordu a autor vícesvazkového monumentu The Art of Computer Programming.</div>
+        </div>
+        <div class="section-block">
+          <div class="section-title">Vědecké a technické milníky</div>
+          <div class="section-text">Sázecí systém TeX, METAFONT a formální analýza složitosti algoritmů.</div>
+        </div>
+        <div class="section-block">
+          <div class="section-title">Společenský a biografický kontext</div>
+          <div class="section-text">Přerušil psaní své knihy na roky, aby vyvinul TeX. Dodnes platí symbolické šeky (2,56 USD) za každou chybu nalezenou v jeho dílech.</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 12. Hedy Lamarr -->
+    <article class="person-card">
+      <div class="person-img-container">
+        <img class="person-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Hedy_lamarr_-_publicity.jpg?width=400" alt="Hedy Lamarr" loading="lazy" referrerpolicy="no-referrer">
+      </div>
+      <div class="person-info">
+        <h2 class="person-name">12. Hedy Lamarr</h2>
+        <div class="person-highlight">"Hollywoodská sexbomba, která ve volném čase vymyslela teoretický základ pro Wi-Fi a Bluetooth."</div>
+        <div class="section-block">
+          <div class="section-title">Medailonek</div>
+          <div class="section-text">Rakousko-americká vynálezkyně a filmová herečka.</div>
+        </div>
+        <div class="section-block">
+          <div class="section-title">Vědecké a technické milníky</div>
+          <div class="section-text">Patentovaný systém skákání po frekvencích (Frequency-Hopping Spread Spectrum, FHSS).</div>
+        </div>
+        <div class="section-block">
+          <div class="section-title">Společenský a biografický kontext</div>
+          <div class="section-text">Vynález navrhla s hudebníkem Georgem Antheilem pro navádění torpéd. Námořnictvo ho odmítlo, dnes tvoří bezdrátový základ Wi-Fi, Bluetooth a GPS.</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 13. Fei-Fei Li -->
+    <article class="person-card">
+      <div class="person-img-container">
+        <img class="person-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Fei-Fei_Li_at_World_Economic_Forum.jpg?width=400" alt="Fei-Fei Li" loading="lazy" referrerpolicy="no-referrer">
+      </div>
+      <div class="person-info">
+        <h2 class="person-name">13. Fei-Fei Li</h2>
+        <div class="person-highlight">"Žena, která „nakrmila“ umělou inteligenci a odstartovala současný rozmach AI."</div>
+        <div class="section-block">
+          <div class="section-title">Medailonek</div>
+          <div class="section-text">Profesorka informatiky na Stanfordu a zakladatelka projektu ImageNet.</div>
+        </div>
+        <div class="section-block">
+          <div class="section-title">Vědecké a technické milníky</div>
+          <div class="section-text">Anotovaná databáze ImageNet (14 milionů obrázků) umožňující rozvoj konvolučních sítí a hlubokého učení.</div>
+        </div>
+        <div class="section-block">
+          <div class="section-title">Společenský a biografický kontext</div>
+          <div class="section-text">Prosadila myšlenku, že AI potřebuje kvalitní strukturovaná data, nikoli jen složitější algoritmy. Dnes prosazuje etickou AI zaměřenou na člověka.</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 14. Ada Lovelace -->
+    <article class="person-card">
+      <div class="person-img-container">
+        <img class="person-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Ada_Lovelace_portrait.jpg?width=400" alt="Ada Lovelace" loading="lazy" referrerpolicy="no-referrer">
+      </div>
+      <div class="person-info">
+        <h2 class="person-name">14. Ada Lovelace</h2>
+        <div class="person-highlight">"První programátorka v historii a vizionářka kódových knihoven."</div>
+        <div class="section-block">
+          <div class="section-title">Medailonek</div>
+          <div class="section-text">Britská matematička a autorka prvního publikovaného počítačového algoritmu.</div>
+        </div>
+        <div class="section-block">
+          <div class="section-title">Vědecké a technické milníky</div>
+          <div class="section-text">Koncept řídicích smyček (loops), podprogramů a vize stroje manipulujícího se symboly.</div>
+        </div>
+        <div class="section-block">
+          <div class="section-title">Společenský a biografický kontext</div>
+          <div class="section-text">Plným jménem Augusta Ada King, hraběnka z Lovelace. Jediná legitimní dcera Lorda Byrona; matka ji vedla k matematice, aby zabránila otcovským „básnickým sklonům“.</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 15. John von Neumann -->
+    <article class="person-card">
+      <div class="person-img-container">
+        <img class="person-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/JohnvonNeumann-LosAlamos.gif?width=400" alt="John von Neumann" loading="lazy" referrerpolicy="no-referrer">
+      </div>
+      <div class="person-info">
+        <h2 class="person-name">15. John von Neumann</h2>
+        <div class="person-highlight">"Geniální matematik a hedonik, který definoval architekturu moderních počítačů a matematicky předpověděl logiku DNA."</div>
+        <div class="section-block">
+          <div class="section-title">Medailonek</div>
+          <div class="section-text">Matematik a fyzik, průkopník kvantové mechaniky, teorie her a výpočetní techniky.</div>
+        </div>
+        <div class="section-block">
+          <div class="section-title">Vědecké a technické milníky</div>
+          <div class="section-text">Von Neumannova architektura počítače, teoretický koncept samoreprodukujících se automatů.</div>
+        </div>
+        <div class="section-block">
+          <div class="section-title">Společenský a biografický kontext</div>
+          <div class="section-text">Předpověděl dvoufázové zpracování instrukční pásky u samoreprodukce ještě před reálným objevem DNA. Pořádal divoké večírky a prováděl složité výpočty přímo z hlavy.</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 16. Seymour Papert -->
+    <article class="person-card">
+      <div class="person-img-container">
+        <img class="person-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Seymour_Papert.jpg?width=400" alt="Seymour Papert" loading="lazy" referrerpolicy="no-referrer">
+      </div>
+      <div class="person-info">
+        <h2 class="person-name">16. Seymour Papert</h2>
+        <div class="person-highlight">"Průkopník výukového programování, který dal dětem do rukou robotickou želvu a ovlivnil LEGO."</div>
+        <div class="section-block">
+          <div class="section-title">Medailonek</div>
+          <div class="section-text">Matematik z MIT, autor jazyka LOGO a průkopník konstrukcionismu ve vzdělávání.</div>
+        </div>
+        <div class="section-block">
+          <div class="section-title">Vědecké a technické milníky</div>
+          <div class="section-text">Vývoj programovacího jazyka LOGO, koncept želví grafiky a autorství knihy Mindstorms.</div>
+        </div>
+        <div class="section-block">
+          <div class="section-title">Společenský a biografický kontext</div>
+          <div class="section-text">Tvrdil, že dítě má programovat počítač, nikoli počítač instruovat dítě. Společnost LEGO po jeho knize pojmenovala sérii LEGO Mindstorms.</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 17. Radia Perlman -->
+    <article class="person-card">
+      <div class="person-img-container">
+        <img class="person-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Radia_Perlman_1990.jpg?width=400" alt="Radia Perlman" loading="lazy" referrerpolicy="no-referrer">
+      </div>
+      <div class="person-info">
+        <h2 class="person-name">17. Radia Perlman</h2>
+        <div class="person-highlight">"„Matka internetu“, která toto označení nenávidí a svůj nejdůležitější protokol napsala jako báseň."</div>
+        <div class="section-block">
+          <div class="section-title">Medailonek</div>
+          <div class="section-text">Síťová inženýrka z MIT, autorka protokolu STP.</div>
+        </div>
+        <div class="section-block">
+          <div class="section-title">Vědecké a technické milníky</div>
+          <div class="section-text">Spanning Tree Protocol (STP) zamezující datovým smyčkám v ethernetových sítích.</div>
+        </div>
+        <div class="section-block">
+          <div class="section-title">Společenský a biografický kontext</div>
+          <div class="section-text">Odmítá titul matky internetu. Základní algoritmus protokolu STP zapsala ve formě čtyřveršové básničky (Algorhythm).</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 18. Claude Shannon -->
+    <article class="person-card">
+      <div class="person-img-container">
+        <img class="person-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/ClaudeShannon_MINT.jpg?width=400" alt="Claude Shannon" loading="lazy" referrerpolicy="no-referrer">
+      </div>
+      <div class="person-info">
+        <h2 class="person-name">18. Claude Shannon</h2>
+        <div class="person-highlight">"Autor nejvlivnější magisterské práce v historii a vynálezce slavné „Nothing Machine“."</div>
+        <div class="section-block">
+          <div class="section-title">Medailonek</div>
+          <div class="section-text">Matematik a inženýr z MIT, zakladatel teorie informace.</div>
+        </div>
+        <div class="section-block">
+          <div class="section-title">Vědecké a technické milníky</div>
+          <div class="section-text">Aplikace Booleovy algebry na spínací obvody (diplomová práce), definice bitu a matematické entropie.</div>
+        </div>
+        <div class="section-block">
+          <div class="section-title">Společenský a biografický kontext</div>
+          <div class="section-text">Stavěl kuriozity – žonglovací roboty, mechanickou myš a Ultimate Machine (krabičku, jejímž úkolem bylo se po zapnutí sama vypnout).</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 19. Linus Torvalds -->
+    <article class="person-card">
+      <div class="person-img-container">
+        <img class="person-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/LinuxCon_Europe_2014_-_Linus_Torvalds_(cropped).jpg?width=400" alt="Linus Torvalds" loading="lazy" referrerpolicy="no-referrer">
+      </div>
+      <div class="person-info">
+        <h2 class="person-name">19. Linus Torvalds</h2>
+        <div class="person-highlight">"Finský student, který v rámci magisterské práce napsal základ nejrozšířenějšího operačního systému na světě a za týden vymyslel Git."</div>
+        <div class="section-block">
+          <div class="section-title">Medailonek</div>
+          <div class="section-text">Finský vývojář, autor jádra Linux a distribuovaného systému správy verzí Git.</div>
+        </div>
+        <div class="section-block">
+          <div class="section-title">Vědecké a technické milníky</div>
+          <div class="section-text">Architektura open-source jádra Linux a systém správy verzí Git.</div>
+        </div>
+        <div class="section-block">
+          <div class="section-title">Společenský a biografický kontext</div>
+          <div class="section-text">Systém vyvíjel v rámci magisterské práce na Helsinské univerzitě. Po kritice svého ostrého komunikačního stylu prošel v roce 2018 sebereflexí a nápravou.</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 20. Alan Turing -->
+    <article class="person-card">
+      <div class="person-img-container">
+        <img class="person-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Alan_Turing_AQA.jpg?width=400" alt="Alan Turing" loading="lazy" referrerpolicy="no-referrer">
+      </div>
+      <div class="person-info">
+        <h2 class="person-name">20. Alan Turing</h2>
+        <div class="person-highlight">"Geniální matematik, který prolomil Enigmu, vymyslel koncept moderního počítače a musel před společností tajit svou identitu."</div>
+        <div class="section-block">
+          <div class="section-title">Medailonek</div>
+          <div class="section-text">Otec teoretické informatiky, matematické logiky a průkopník umělé inteligence.</div>
+        </div>
+        <div class="section-block">
+          <div class="section-title">Vědecké a technické milníky</div>
+          <div class="section-text">Universal Turing Machine, prolomení šifry Enigma, Turingův test.</div>
+        </div>
+        <div class="section-block">
+          <div class="section-title">Společenský a biografický kontext</div>
+          <div class="section-text">Jeho válečné zásluhy podléhaly utajení. V roce 1952 byl odsouzen za homosexualitu, což vedlo k jeho předčasné smrti (1954). Rehabilitován byl až v roce 2013.</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 21. Eben Upton -->
+    <article class="person-card">
+      <div class="person-img-container">
+        <img class="person-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Eben_Upton_-_GDC_2013.jpg?width=400" alt="Eben Upton" loading="lazy" referrerpolicy="no-referrer">
+      </div>
+      <div class="person-info">
+        <h2 class="person-name">21. Eben Upton</h2>
+        <div class="person-highlight">"Cambridge profesor, kterého naštvalo, že uchazeči o studium IT neumí programovat, a tak sestrojil počítač za cenu jedné učebnice."</div>
+        <div class="section-block">
+          <div class="section-title">Medailonek</div>
+          <div class="section-text">Počítačový vědec z Cambridge a zakladatel Nadace Raspberry Pi.</div>
+        </div>
+        <div class="section-block">
+          <div class="section-title">Section-Title: Vědecké a technické milníky</div>
+          <div class="section-text">Architektura ultra-levného jednodeskového počítače Raspberry Pi s cílem výuky hardwaru a systémového vývoje.</div>
+        </div>
+        <div class="section-block">
+          <div class="section-title">Společenský a biografický kontext</div>
+          <div class="section-text">Reagoval na úpadek praktických znalostí středoškoláků. Z akademického nápadu vybudoval globální edukační a kutilský standard.</div>
+        </div>
+      </div>
+    </article>
+
+  </main>
+
+</body>
+</html>
