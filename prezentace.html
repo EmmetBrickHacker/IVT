@@ -65,7 +65,7 @@
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
       gap: 1.5rem;
       max-width: 1400px;
       margin: 0 auto;
@@ -77,53 +77,61 @@
       border-radius: 12px;
       overflow: hidden;
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
+      align-items: stretch;
       transition: transform 0.2s, border-color 0.2s;
       cursor: pointer;
     }
 
     .card:hover {
-      transform: translateY(-4px);
+      transform: translateY(-3px);
       border-color: var(--accent);
     }
 
     .card-img-container {
-      width: 100%;
-      height: 240px;
-      background-color: #000;
-      overflow: hidden;
+      width: 130px;
+      min-width: 130px;
+      background-color: #0f172a;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .card-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: top;
+      object-position: center top;
+      display: block;
     }
 
     .card-content {
       padding: 1.2rem;
       display: flex;
       flex-direction: column;
+      justify-content: center;
       flex-grow: 1;
     }
 
     .card-title {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
+      font-weight: 700;
       color: var(--accent);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
     }
 
     .card-highlight {
       font-weight: 600;
       font-style: italic;
       color: #e2e8f0;
-      margin-bottom: 0.8rem;
-      font-size: 0.95rem;
+      margin-bottom: 0.6rem;
+      font-size: 0.9rem;
+      line-height: 1.3;
     }
 
     .card-medailonek {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: var(--text-muted);
       display: -webkit-box;
       -webkit-line-clamp: 3;
@@ -182,11 +190,12 @@
     }
 
     .modal-img {
-      width: 120px;
-      height: 120px;
+      width: 110px;
+      height: 110px;
       border-radius: 50%;
       object-fit: cover;
       border: 2px solid var(--accent);
+      flex-shrink: 0;
     }
 
     .modal-title-area h2 {
@@ -199,7 +208,7 @@
     }
 
     .modal-section h3 {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       color: #e2e8f0;
       border-bottom: 1px solid var(--border);
       padding-bottom: 0.3rem;
@@ -216,7 +225,7 @@
 
   <header>
     <h1>Osobnosti Informatiky a Výpočetní Vědy</h1>
-    <p class="subtitle">Katalog inspirativních osobností pro námět prezentace</p>
+    <p class="subtitle">Katalog významných osobností pro 1. ročník gymnázia</p>
     <input type="text" id="searchInput" class="search-box" placeholder="Vyhledat podle jména nebo klíčového slova...">
   </header>
 
@@ -226,7 +235,7 @@
     <div class="modal-content">
       <button class="close-btn" onclick="closeModal()">&times;</button>
       <div class="modal-header">
-        <img id="modalImg" class="modal-img" src="" alt="">
+        <img id="modalImg" class="modal-img" src="" alt="" referrerpolicy="no-referrer">
         <div class="modal-title-area">
           <h2 id="modalName"></h2>
           <p id="modalHighlight" style="font-style: italic; color: #cbd5e1; font-size: 0.95rem; margin-top: 0.3rem;"></p>
@@ -248,6 +257,8 @@
   </div>
 
   <script>
+    const fallbackSVG = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='1.5'><path d='M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2'/><circle cx='12' cy='7' r='4'/></svg>";
+
     const data = [
       {
         name: "Frances Allen",
@@ -255,7 +266,7 @@
         medailonek: "Výzkumnice v IBM a průkopnice v oblasti optimalizace překladačů a paralelního zpracování kódu.",
         milniky: "Teoretické základy optimalizace překladačů (compilers) a automatického paralelního zpracování kódu.",
         kontext: "V IBM začínala jako učitelka FORTRANu. Dokázala, že lidsky čitelný vysokoúrovňový kód může na daném hardwaru běžet stejně rychle jako kód psaný přímo ve strojovém jazyce.",
-        img: "https://upload.wikimedia.org/wikipedia/commons/f/f6/Fran_Allen_Turing_Award.jpg"
+        img: "https://commons.wikimedia.org/wiki/Special:FilePath/Fran_Allen_Turing_Award.jpg?width=400"
       },
       {
         name: "Charles Babbage",
@@ -263,7 +274,7 @@
         medailonek: "Britský matematik a profesor z Cambridge, konstruktér prvních mechanických počítacích strojů.",
         milniky: "Diferenční a Analytický stroj – první mechanická architektura počítače s oddělenou pamětí a procesorem.",
         kontext: "Znechucen chybovostí lidských kalkulátorů v astronomických tabulkách se dostal do sporů s britskou vládou. Kvůli limitům tehdejšího strojírenství stroj za svého života nedokončil.",
-        img: "https://upload.wikimedia.org/wikipedia/commons/8/88/Charles_Babbage_-_1860.jpg"
+        img: "https://commons.wikimedia.org/wiki/Special:FilePath/Charles_Babbage_-_1860.jpg?width=400"
       },
       {
         name: "Tim Berners-Lee",
@@ -271,7 +282,7 @@
         medailonek: "Britský inženýr z CERNu, autor protokolů HTTP, jazyka HTML a adresování URL.",
         milniky: "Návrh prvního webového serveru, prohlížeče a konceptu hyperlinked informací World Wide Web (1989).",
         kontext: "Odmítl si technologii patentovat a prosadil, aby CERN uvolnil kód WWW bez licenčních poplatků bezplatně pro celý svět.",
-        img: "https://upload.wikimedia.org/wikipedia/commons/4/4e/Sir_Tim_Berners-Lee_%28cropped%29.jpg"
+        img: "https://commons.wikimedia.org/wiki/Special:FilePath/Sir_Tim_Berners-Lee_(cropped).jpg?width=400"
       },
       {
         name: "John Carmack",
@@ -279,201 +290,11 @@
         medailonek: "Hlavní programátor id Software, autor klíčových grafických algoritmů pro akční hry z pohledu první osoby.",
         milniky: "Raycasting (Wolfenstein 3D), BSP stromy (Doom), 3D světelné mapy a PVS (Quake).",
         kontext: "Zásadně ovlivnil herní průmysl otevřeností a zaměřením na výkon. Jeho nekompromisní pracovní nasazení vedlo ke konfliktům a rozpadu ikonického týmu id Software.",
-        img: "https://upload.wikimedia.org/wikipedia/commons/d/d4/John_Carmack_at_QuakeCon_2017.jpg"
+        img: "https://commons.wikimedia.org/wiki/Special:FilePath/John_Carmack_at_QuakeCon_2017.jpg?width=400"
       },
       {
         name: "Edgar F. Codd",
         highlight: "Vědec z IBM, jehož převratný nápad firma roky tajila, protože by jí zkazil prodej starších databází.",
         medailonek: "Britsko-americký matematický vědec a tvůrce relační teorie databází.",
         milniky: "Relační model databází (organizace dat do tabulek propojených klíči) a teoretický základ pro jazyk SQL.",
-        kontext: "IBM jeho objev zpočátku blokovala kvůli prodeji starších systémů IMS. Codd koncept publikoval samostatně a přinutil celý průmysl změnit směrování.",
-        img: "https://upload.wikimedia.org/wikipedia/commons/5/58/Edgar_F_Codd.jpg"
-      },
-      {
-        name: "Margaret Hamilton",
-        highlight: "Žena, jejíž ručně psaný kód zachránil přistání na Měsíci a dala oboru název softwarové inženýrství.",
-        medailonek: "Ředitelka softwarového inženýrství v MIT Instrumentation Lab pro vesmírný program Apollo.",
-        milniky: "Architektura asynchronního zpracování, prioritizace úloh (priority scheduling) v palubním počítači Apolla 11.",
-        kontext: "Prosadila termín Software Engineering jako plnohodnotný vědní obor. Ikonická je fotografie, kde stojí vedle stohu tištěného kódu vyššího než ona sama.",
-        img: "https://upload.wikimedia.org/wikipedia/commons/d/db/Margaret_Hamilton_-_Restoration.jpg"
-      },
-      {
-        name: "Geoffrey Hinton",
-        highlight: "„Kmotr hlubokého učení“, kterému se desítky let všichni vysmívali za věrnost neuronovým sítím – až za ně dostal Nobelovu cenu.",
-        medailonek: "Kognitivní psycholog a počítačový vědec z University of Toronto, držitel Nobelovy ceny za fyziku (2024).",
-        milniky: "Algoritmus zpětného šíření chyby (backpropagation) pro trénování vícevrstvých neuronových sítí.",
-        kontext: "Desítky let čelil skepsi akademické obce. Po průlomu v AI opustil pozice v průmyslu, aby se věnoval varováním před riziky nekontrolovaného vývoje AI.",
-        img: "https://upload.wikimedia.org/wikipedia/commons/d/d1/Geoffrey_Hinton_at_University_of_Toronto_%28cropped%29.jpg"
-      },
-      {
-        name: "Grace Hopper",
-        highlight: "Prababička COBOLu, která našla první skutečný „bug“ a naučila počítače rozumět angličtině.",
-        medailonek: "Kontradmirálka US Navy a matematička z Yale, průkopnice prvních kompilátorů.",
-        milniky: "Vynález prvního kompilátoru (A-0) a spolutvorba vyššího programovacího jazyka COBOL.",
-        kontext: "Zpopularizovala termín debugging vytažením můry z relé počítače Harvard Mark II. Bojovala za to, aby programování nebylo výsadou matematiků píšících strojový kód.",
-        img: "https://upload.wikimedia.org/wikipedia/commons/a/a4/Commodore_Grace_M._Hopper%2C_USN_%28uncovered%29.jpg"
-      },
-      {
-        name: "Mary Jackson",
-        highlight: "První inženýrka tmavé pleti v NASA, která si právo na studium musela vybojovat u soudu.",
-        medailonek: "Matematička a letecká inženýrka pracující na aerodynamických tunelech v NASA.",
-        milniky: "Analýza stlačitelnosti vzduchu a aerodynamiky při nadzvukových rychlostech.",
-        kontext: "Aby získala inženýrskou kvalifikaci, zažalovala město a získala soudní povolení navštěvovat večerní kurzy na střední škole určené výhradně pro bělochy.",
-        img: "https://upload.wikimedia.org/wikipedia/commons/4/48/Mary_Jackson_computing.jpg"
-      },
-      {
-        name: "Katherine Johnson",
-        highlight: "Lidský počítač, bez jehož ručních výpočtů odmítl astronaut John Glenn odstartovat do vesmíru.",
-        medailonek: "Matematická fyzička v NASA, autorka výpočtů trajektorií pro pilotované lety do vesmíru.",
-        milniky: "Výpočty orbitálních drah pro projekty Mercury a Apollo 11, ruční záložní výpočty pro Apollo 13.",
-        kontext: "Jako černošská žena čelila dvojí segregaci. Astronaut John Glenn trval na tom, aby Katherine ručně ověřila výpočty z nového počítače IBM před jeho startem.",
-        img: "https://upload.wikimedia.org/wikipedia/commons/6/67/Katherine_Johnson_1950s.jpg"
-      },
-      {
-        name: "Donald Knuth",
-        highlight: "Počítačový gigant, který vymyslel celosvětový standard pro elektronickou sazbu matematiky (TeX) jen proto, že byl nespokojen s grafikou vlastních skript.",
-        medailonek: "Profesor ze Stanfordu a autor vícesvazkového monumentu The Art of Computer Programming.",
-        milniky: "Sázecí systém TeX, METAFONT a formální analýza složitosti algoritmů.",
-        kontext: "Přerušil psaní své knihy na roky, aby vyvinul TeX. Dodnes platí symbolické šeky (2,56 USD) za každou chybu nalezenou v jeho dílech.",
-        img: "https://upload.wikimedia.org/wikipedia/commons/4/4f/KnuthAtComputer.jpg"
-      },
-      {
-        name: "Hedy Lamarr",
-        highlight: "Hollywoodská sexbomba, která ve volném čase vymyslela teoretický základ pro Wi-Fi a Bluetooth.",
-        medailonek: "Rakousko-americká vynálezkyně a filmová herečka.",
-        milniky: "Patentovaný systém skákání po frekvencích (Frequency-Hopping Spread Spectrum, FHSS).",
-        kontext: "Vynález navrhla s hudebníkem Georgem Antheilem pro navádění torpéd. Námořnictvo ho odmítlo, dnes tvoří bezdrátový základ Wi-Fi, Bluetooth a GPS.",
-        img: "https://upload.wikimedia.org/wikipedia/commons/8/83/Hedy_lamarr_-_publicity.jpg"
-      },
-      {
-        name: "Fei-Fei Li",
-        highlight: "Žena, která „nakrmila“ umělou inteligenci a odstartovala současný rozmach AI.",
-        medailonek: "Profesorka informatiky na Stanfordu a zakladatelka projektu ImageNet.",
-        milniky: "Anotovaná databáze ImageNet (14 milionů obrázků) umožňující rozvoj konvolučních sítí a hlubokého učení.",
-        kontext: "Prosadila myšlenku, že AI potřebuje kvalitní strukturovaná data, nikoli jen složitější algoritmy. Dnes prosazuje etickou AI zaměřenou na člověka.",
-        img: "https://upload.wikimedia.org/wikipedia/commons/3/3d/Fei-Fei_Li_at_World_Economic_Forum.jpg"
-      },
-      {
-        name: "Ada Lovelace",
-        highlight: "První programátorka v historii a vizionářka kódových knihoven.",
-        medailonek: "Britská matematička a autorka prvního publikovaného počítačového algoritmu.",
-        milniky: "Koncept řídicích smyček (loops), podprogramů a vize stroje manipulujícího se symboly.",
-        kontext: "Plným jménem Augusta Ada King, hraběnka z Lovelace. Jediná legitimní dcera Lorda Byrona; matka ji vedla k matematice, aby zabránila otcovským „básnickým sklonům“.",
-        img: "https://upload.wikimedia.org/wikipedia/commons/a/a1/Ada_Lovelace_portrait.jpg"
-      },
-      {
-        name: "John von Neumann",
-        highlight: "Geniální matematik a hedonik, který definoval architekturu moderních počítačů a matematicky předpověděl logiku DNA.",
-        medailonek: "Matematik a fyzik, průkopník kvantové mechaniky, teorie her a výpočetní techniky.",
-        milniky: "Von Neumannova architektura počítače, teoretický koncept samoreprodukujících se automatů.",
-        kontext: "Předpověděl dvoufázové zpracování instrukční pásky u samoreprodukce ještě před reálným objevem DNA. Pořádal divoké večírky a prováděl složité výpočty přímo z hlavy.",
-        img: "https://upload.wikimedia.org/wikipedia/commons/5/5e/JohnvonNeumann-LosAlamos.gif"
-      },
-      {
-        name: "Seymour Papert",
-        highlight: "Průkopník výukového programování, který dal dětem do rukou robotickou želvu a ovlivnil LEGO.",
-        medailonek: "Matematik z MIT, autor jazyka LOGO a průkopník konstrukcionismu ve vzdělávání.",
-        milniky: "Vývoj programovacího jazyka LOGO, koncept želví grafiky a autorství knihy Mindstorms.",
-        kontext: "Tvrdil, že dítě má programovat počítač, nikoli počítač instruovat dítě. Společnost LEGO po jeho knize pojmenovala sérii LEGO Mindstorms.",
-        img: "https://upload.wikimedia.org/wikipedia/commons/8/87/Seymour_Papert.jpg"
-      },
-      {
-        name: "Radia Perlman",
-        highlight: "„Matka internetu“, která toto označení nenávidí a svůj nejdůležitější protokol napsala jako báseň.",
-        medailonek: "Síťová inženýrka z MIT, autorka protokolu STP.",
-        milniky: "Spanning Tree Protocol (STP) zamezující datovým smyčkám v ethernetových sítích.",
-        kontext: "Odmítá titul matky internetu. Základní algoritmus protokolu STP zapsala ve formě čtyřveršové básničky (Algorhythm).",
-        img: "https://upload.wikimedia.org/wikipedia/commons/d/da/Radia_Perlman_1990.jpg"
-      },
-      {
-        name: "Claude Shannon",
-        highlight: "Autor nejvlivnější magisterské práce v historii a vynálezce slavné „Nothing Machine“.",
-        medailonek: "Matematik a inženýr z MIT, zakladatel teorie informace.",
-        milniky: "Aplikace Booleovy algebry na spínací obvody (diplomová práce), definice bitu a matematické entropie.",
-        kontext: "Stavěl kuriozity – žonglovací roboty, mechanickou myš a Ultimate Machine (krabičku, jejímž úkolem bylo se po zapnutí sama vypnout).",
-        img: "https://upload.wikimedia.org/wikipedia/commons/9/99/ClaudeShannon_MINT.jpg"
-      },
-      {
-        name: "Linus Torvalds",
-        highlight: "Finský student, který v rámci magisterské práce napsal základ nejrozšířenějšího operačního systému na světě a za týden vymyslel Git.",
-        medailonek: "Finský vývojář, autor jádra Linux a distribuovaného systému správy verzí Git.",
-        milniky: "Architektura open-source jádra Linux a systém správy verzí Git.",
-        kontext: "Systém vyvíjel v rámci magisterské práce na Helsinské univerzitě. Po kritice svého ostrého komunikačního stylu prošel v roce 2018 sebereflexí a nápravou.",
-        img: "https://upload.wikimedia.org/wikipedia/commons/0/01/LinuxCon_Europe_2014_-_Linus_Torvalds_%28cropped%29.jpg"
-      },
-      {
-        name: "Alan Turing",
-        highlight: "Geniální matematik, který prolomil Enigmu, vymyslel koncept moderního počítače a musel před společností tajit svou identitu.",
-        medailonek: "Otec teoretické informatiky, matematické logiky a průkopník umělé inteligence.",
-        milniky: "Universal Turing Machine, prolomení šifry Enigma, Turingův test.",
-        kontext: "Jeho válečné zásluhy podléhaly utajení. V roce 1952 byl odsouzen za homosexuality, což vedlo k jeho předčasné smrti (1954). Rehabilitován byl až v roce 2013.",
-        img: "https://upload.wikimedia.org/wikipedia/commons/a/a1/Alan_Turing_AQA.jpg"
-      },
-      {
-        name: "Eben Upton",
-        highlight: "Cambridge profesor, kterého naštvalo, že uchazeči o studium IT neumí programovat, a tak sestrojil počítač za cenu jedné učebnice.",
-        medailonek: "Počítačový vědec z Cambridge a zakladatel Nadace Raspberry Pi.",
-        milniky: "Architektura ultra-levného jednodeskového počítače Raspberry Pi s cílem výuky hardwaru a systémového vývoje.",
-        kontext: "Reagoval na úpadek praktických znalostí středoškoláků. Z akademického nápadu vybudoval globální edukační a kutilský standard.",
-        img: "https://upload.wikimedia.org/wikipedia/commons/1/10/Eben_Upton_-_GDC_2013.jpg"
-      }
-    ];
-
-    const grid = document.getElementById('cardsGrid');
-    const searchInput = document.getElementById('searchInput');
-
-    function renderCards(filterText = '') {
-      grid.innerHTML = '';
-      const filtered = data.filter(item => 
-        item.name.toLowerCase().includes(filterText.toLowerCase()) ||
-        item.highlight.toLowerCase().includes(filterText.toLowerCase()) ||
-        item.medailonek.toLowerCase().includes(filterText.toLowerCase())
-      );
-
-      filtered.forEach(item => {
-        const card = document.createElement('div');
-        card.className = 'card';
-        card.onclick = () => openModal(item);
-        card.innerHTML = `
-          <div class="card-img-container">
-            <img class="card-img" src="${item.img}" alt="${item.name}" loading="lazy">
-          </div>
-          <div class="card-content">
-            <div class="card-title">${item.name}</div>
-            <div class="card-highlight">"${item.highlight}"</div>
-            <div class="card-medailonek">${item.medailonek}</div>
-          </div>
-        `;
-        grid.appendChild(card);
-      });
-    }
-
-    function openModal(item) {
-      document.getElementById('modalImg').src = item.img;
-      document.getElementById('modalName').innerText = item.name;
-      document.getElementById('modalHighlight').innerText = `"${item.highlight}"`;
-      document.getElementById('modalMedailonek').innerText = item.medailonek;
-      document.getElementById('modalMilniky').innerText = item.milniky;
-      document.getElementById('modalKontext').innerText = item.kontext;
-      document.getElementById('detailModal').style.display = 'flex';
-    }
-
-    function closeModal() {
-      document.getElementById('detailModal').style.display = 'none';
-    }
-
-    searchInput.addEventListener('input', (e) => {
-      renderCards(e.target.value);
-    });
-
-    window.onclick = function(event) {
-      const modal = document.getElementById('detailModal');
-      if (event.target === modal) {
-        closeModal();
-      }
-    }
-
-    renderCards();
-  </script>
-</body>
-</html>
+        kontext: "IBM jeho objev zpočátku blokovala kvůli prodeji starších systémů IMS. Codd koncept publikoval samostatně a přinutil celý průmysl změnit
