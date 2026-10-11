@@ -374,19 +374,19 @@ Cyklus je kód, který se provádí opakovaně. Místo abychom vypisovali stále
 * https://www.w3schools.com/python/python_while_loops.asp
 * Někdy se může stát, že neznáme konkrétní počet opakování, jen známe okolnosti, za kterých máme stále pokračovat, případně kdy skončit. Pro takové situace použijeme cyklus `while` za který doplníme podmínku, kterou zkontroluje při každém průchodu a pokud je pravdivá provede další průchod cyklem.
  Hezkým příkladem pro použití byl hod kostkou ve hře *Člověče nezlob se!* kde se hází znovu, když padně 6. Všimněte si, že když podmínka nebude splněna hned na začátku, vnitřek cyklu se vůbec neprovede.
- ```
- from random import randint
- # budeme potřebovat generátor náhodných čísel
- 
- roll = randint(1, 6) # samotný hod
- bonus = 0            # čítač bonusových hodů
- 
- while roll == 6:     # když padne 6 házej znovu
-     bonus += 1
-     roll = randint(1, 6)
- 
- roll += 6 * bonus    # konečný výsledek hodu
- ```
+  ```
+  from random import randint
+  # budeme potřebovat generátor náhodných čísel
+  
+  roll = randint(1, 6) # samotný hod
+  bonus = 0            # čítač bonusových hodů
+  
+  while roll == 6:     # když padne 6 házej znovu
+      bonus += 1
+      roll = randint(1, 6)
+  
+  roll += 6 * bonus    # konečný výsledek hodu
+  ```
 
 ## Definice funkcí
 * https://www.w3schools.com/python/python_functions.asp
