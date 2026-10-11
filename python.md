@@ -7,12 +7,12 @@ Počítejte s tím, že většinu hodin budeme začínat čtením kódu a rozbor
 Znalosti, které nejsou povinné, ale považuji jejich znalost za užitečnou a můžete si tím zlepšit známku jsou označeny jako **[ ROZŠIŘUJÍCÍ ]**
 
 ## Doporučené studijní opory:
-* https://www.w3schools.com/python/default.asp
-* https://microbit-micropython.readthedocs.io/en/latest/index.html
+* [https://www.w3schools.com/python/default.asp](https://www.w3schools.com/python/default.asp)
+* [https://microbit-micropython.readthedocs.io/en/latest/index.html](https://microbit-micropython.readthedocs.io/en/latest/index.html)
 * **ZA ELEMENTÁRNÍ ZNALOST POVAŽUJI**, že když něco končí **`()`** (s případnými argumenty uvnitř), jedná se o *callable* tedy *volatelný objekt*. Pro vaše potřeby můžete všechny volatelné objekty považovat za **funkce** - existují ještě *metody*, ale jsou strukturně natolik podobné, že pokud se nebudete věnovat programování hlouběji, můžete tato slova považovat téměř za synonyma.
 
 ## Moduly:
-* https://www.w3schools.com/python/python_modules.asp
+* [https://www.w3schools.com/python/python_modules.asp](https://www.w3schools.com/python/python_modules.asp)
 * Modul je v podstatě knihovna s různými strukturami, které chceme použít v programování. Můžeme si tak nahrát rozšiřující funkce, které chceme používat v kódu.
 Zároveň, pokud nějakou strukturu používáme v různých projektech, nemusíme jí psát pokaždé znovu, můžeme si ji dát do samostatné knihovny. Nemusíme ani využívat celou knihovnu, ale můžeme si z ní načíst jen to, co potřebujeme.
 U rozsáhlejších projektů se může hodit udržovat rozdílné části kódu v samostatných knihovnách, abychom se rychleji orientovali - to se může hodit v okamžiku, kdy budeme ve druhém ročníku programovat pomocí Pythonu micro:bit.
@@ -62,7 +62,7 @@ U rozsáhlejších projektů se může hodit udržovat rozdílné části kódu 
     ```
 
 * ze všech rozšiřujících knihoven byste měli znát alespoň modul **random**:
-    https://www.w3schools.com/python/module_random.asp
+    [https://www.w3schools.com/python/module_random.asp](https://www.w3schools.com/python/module_random.asp)
     * **`random()`** ... vrací náhodný **float** mezi `0` a `1`
     * **`randint()`** ... vrací náhodný **integer** ze zadaného rozsahu
     * měli byste umět vysvětlit, co dělá následující kód:
@@ -78,7 +78,7 @@ U rozsáhlejších projektů se může hodit udržovat rozdílné části kódu 
     *Není třeba znát tuto metodu, ale je třeba vědět, že základní metoda **random()** generuje jen v rozsahu čísel 0 a 1. Případně zkuste zvážit, proč je základní metoda **random()** definována právě takto.*
 
 * další knihovna, se kterou se pravděpodobně často setkáte je modul **math**:
-    https://www.w3schools.com/python/module_math.asp
+    [://www.w3schools.com/python/module_math.asp](https://www.w3schools.com/python/module_math.asp)
     * **`sqrt()`** ... vrací odmocninu z čísla zadaného jako argument
         ```
         from math import sqrt
@@ -123,17 +123,17 @@ U rozsáhlejších projektů se může hodit udržovat rozdílné části kódu 
 
 ## Datové typy, které je třeba znát:
 Jedná se o naprosto základní datové typy, které jsou v nějaké podobě přítomné ve všech běžně používaných jazycích. Jejich jména se mohou napříč jazyky mírně měnit, stejně jako určité detaily (například místo seznamů můžete narazit na obecnější strukturu pole), jde mi tedy především o znalost principů.
-https://www.w3schools.com/python/python_datatypes.asp
+[https://www.w3schools.com/python/python_datatypes.asp](https://www.w3schools.com/python/python_datatypes.asp)
 * **integer** ... celá čísla (mohou být i záporná). Lze s nimi provádět matematické operace (viz *aritmetické operátory*), výsledek ale může být float
 * **float** ... čísla s desetinnou čárkou - umožňují vyjadřovat desetinná čísla.
 * **string** ... řetězec znaků - lze je skládat (pomocí operátoru `+`) a opakovat (pomocí operátoru `*` následovaného nezáporným celým číslem)
 * **boolean** ... má jen dvě hodnoty: `True` nebo `False`. zabírá jen velmi malé množství paměti; proměnná tohoto typu může být použita jako podmínková klauzule
 * **list** ... seznamy slouží k uchovávání vícero položek v jedné proměnné, můžeme se odvolávat na konkrétní položku
 * **[ ROZŠIŘUJÍCÍ ]** Potenciálně užitečné pro hlubší pochopení jazyka Python, je datový typ **NoneType** a hodnota `None`:
-    https://www.w3schools.com/python/python_none.asp
+    [https://www.w3schools.com/python/python_none.asp](https://www.w3schools.com/python/python_none.asp)
 
 ### Stringy neboli řetězce
-* https://www.w3schools.com/python/python_strings.asp
+* [https://www.w3schools.com/python/python_strings.asp](https://www.w3schools.com/python/python_strings.asp)
 * Řetězec znaků zapíšeme tak, že ho obklopíme jednoduchými či dvojitými rovnými uvozovkami:
     ```
     day = 'friday'
@@ -145,7 +145,7 @@ https://www.w3schools.com/python/python_datatypes.asp
     day = 'Today is "friday"'
     ```
 * Pokud z nějakého důvodu potřebujeme zapsat znak, který buď nemá svou klávesu, nebo je standardně interpretován jako funkční symbol, používáme takzvané **řídící znaky** (můžete se setkat i s výrazem **únikové znaky**, což vychází z doslovného překladu anglického označení **escape characters**, někdy se můžete setkat i s pojmem **escape sekvence**, protože jsou obvykle zapisovány pomocí sekvence po sobě jdoucích znaků).
-  https://www.w3schools.com/python/python_strings_escape.asp
+  [https://www.w3schools.com/python/python_strings_escape.asp](https://www.w3schools.com/python/python_strings_escape.asp)
   Řídící znaky se zapisují tak, že začnete zpětným lomítkem `\` následovaným sekvencí znaků určujících, o jaký znak má jít:
   *   **`\'`** ... jednoduché rovné uvozovky, někdy používány jako apostrof
   Příklad: `text = 'It\'s alright.'`
@@ -172,10 +172,10 @@ https://www.w3schools.com/python/python_datatypes.asp
     ```
     print(f"{nickname} follows you {followage:.2f} days.")
     ```    
-    Více informací o formátovacích typech se můžete dozvědět zde: https://www.w3schools.com/python/ref_string_format.asp
+    Více informací o formátovacích typech se můžete dozvědět zde: [https://www.w3schools.com/python/ref_string_format.asp](https://www.w3schools.com/python/ref_string_format.asp)
 
 ## Komentáře
-* https://www.w3schools.com/python/python_comments.asp
+* [https://www.w3schools.com/python/python_comments.asp](https://www.w3schools.com/python/python_comments.asp)
 * Začátečníky podceňovaný, přesto velmi důležitý nástroj při psaní kódu. Nepodceňujte komentáře - zkuste o kódu uvažovat tak, že si do nich zapíšete všechno, co byste potřebovali říct, abyste za půl roku, poté, co jste kód vůbec neviděli, hned věděli, co se v něm kde děje
 * komentáře mohou sloužit k vysvětlení části kódu
     ```
@@ -213,7 +213,7 @@ print("Hello, World!")
 ```
 
 ## Proměnné:
-* https://www.w3schools.com/python/python_variables_names.asp
+* [https://www.w3schools.com/python/python_variables_names.asp](https://www.w3schools.com/python/python_variables_names.asp)
 * jak se zapisují hodnoty různých datových typů:
     ```
     name = 'Me'
@@ -228,19 +228,19 @@ Porovnejte například zápis `age`, `AGE` a `Age`
 
 ## Operátory
 ### Aritmetické operátory
-* https://www.w3schools.com/python/python_operators_arithmetic.asp
+* [https://www.w3schools.com/python/python_operators_arithmetic.asp](https://www.w3schools.com/python/python_operators_arithmetic.asp)
 * jak se zapisují základní aritmetické operace sčítání, odčítání, násobení dělení (operátory `+`, `-`, `*` `/`)
 * jak fungují operátory `+` a `*`, když je aplikujeme na **string**?
 * **[ ROZŠIŘUJÍCÍ ]** užitečné operace jako mocnina, celočíselné dělení a modulo (operátory `**`, `//` a `%`)
   
 ### Přiřazovací operátory
-* https://www.w3schools.com/python/python_operators_assign.asp
+* [https://www.w3schools.com/python/python_operators_assign.asp](https://www.w3schools.com/python/python_operators_assign.asp)
 * základní přiřazení `=`
 * modifikace hodnoty: `+=`, `-=`, `*=` a `/=`
 * **[ ROZŠIŘUJÍCÍ ]** operátory `//=`, `%=` nebo `**=`
 
 ### Porovnávací operátory
-* https://www.w3schools.com/python/python_operators_comparison.asp
+* [https://www.w3schools.com/python/python_operators_comparison.asp](https://www.w3schools.com/python/python_operators_comparison.asp)
 * rovnost `==`
 (**JE TŘEBA ZNÁT ROZDÍL MEZI OPERÁTORY `=` A `==`**, je to jedna z nejčastějších chyb v zápisu kódu)
 * různé typy nerovností
@@ -252,7 +252,7 @@ Porovnejte například zápis `age`, `AGE` a `Age`
 * uveďte běžný případ použití (viz *Podmíněné příkazy* a *Cykly*)
 
 ### Logické operátory
-* https://www.w3schools.com/python/python_operators_logical.asp
+* [https://www.w3schools.com/python/python_operators_logical.asp](https://www.w3schools.com/python/python_operators_logical.asp)
 * logické operátory určují jaká **logická funkce** má být provedena se zadaným výrazem.
   * **logická funkce** je funkce, která má za vstupní výrazy parametry, kterým lze přiřadit logickou hodnotu (v Pythonu hodnoty mohou být `True` nebo `False`), a vrací opět logickou hodnotu.
 * operátory 
@@ -270,7 +270,7 @@ Porovnejte například zápis `age`, `AGE` a `Age`
   * **NoneType** (hodnota `None`) - vždy `False`
 
 ## Podmíněné příkazy:
-* https://www.w3schools.com/python/python_conditions.asp
+* [https://www.w3schools.com/python/python_conditions.asp](https://www.w3schools.com/python/python_conditions.asp)
 * Podmíněné příkazy jsou nejdůležitější nástroj větvení kódu. 
 * **[ TERMINOLOGICKÁ POZNÁMKA ]** Podmínkou rozumíme jakýkoliv výraz, kterému lze přiřadit pravdivostní hodnotu.
 
@@ -345,7 +345,7 @@ else:
 Cyklus je kód, který se provádí opakovaně. Místo abychom vypisovali stále dokola ty samé kroky, tak sepišeme jednu sadu (jeden průchod cyklu) a určíme, kolikrát se má vnitřek cyklu opakovat.
 
 ### FOR-cyklus čili cyklus s konkrétním počtem opakování
-* https://www.w3schools.com/python/python_for_loops.asp
+* [https://www.w3schools.com/python/python_for_loops.asp](https://www.w3schools.com/python/python_for_loops.asp)
 * Pokud známe konkrétní počet opakování předem, nejsnazší způsob, je použít cyklus `for`.
   Například pokud bychom chtěli napsat instrukce pro nakreslení čtverce, mohlo by to vypadat nějak takto:
   ```
@@ -371,7 +371,7 @@ Cyklus je kód, který se provádí opakovaně. Místo abychom vypisovali stále
   ```
 
 ### WHILE-cyklus čili cyklus s podmínkou
-* https://www.w3schools.com/python/python_while_loops.asp
+* [https://www.w3schools.com/python/python_while_loops.asp](https://www.w3schools.com/python/python_while_loops.asp)
 * Někdy se může stát, že neznáme konkrétní počet opakování, jen známe okolnosti, za kterých máme stále pokračovat, případně kdy skončit. Pro takové situace použijeme cyklus `while` za který doplníme podmínku, kterou zkontroluje při každém průchodu a pokud je pravdivá provede další průchod cyklem.
  Hezkým příkladem pro použití byl hod kostkou ve hře *Člověče nezlob se!* kde se hází znovu, když padně 6. Všimněte si, že když podmínka nebude splněna hned na začátku, vnitřek cyklu se vůbec neprovede.
   ```
@@ -389,11 +389,11 @@ Cyklus je kód, který se provádí opakovaně. Místo abychom vypisovali stále
   ```
 
 ## Definice funkcí
-* https://www.w3schools.com/python/python_functions.asp
+* [https://www.w3schools.com/python/python_functions.asp](https://www.w3schools.com/python/python_functions.asp)
 * Některé části procedury chceme vykonávat častěji a místo abychom pořád dokola opakovali ten samý kód, můžeme si je uložit jako funkce. Tím zajistíme, že kód bude jen na jednom místě a pokud bychom potřebovali upravit jeho mechanismus, nemusíme se bát, že ho někde zapomeneme opravit.
 * Pro definici funkce se používá klíčové slovo **`def`** následované jménem funkce a závorkami. Takto si vytvoříme funkci, která nám vypíše aktuální datum a čas:
 * **[ UPOZORNĚNÍ ]** modul **datetime** využívaný v následujících příkladech není implementován v Pythonu pro micro:bit, který využívá zjednodušený modul **utime**. 
- * Specifikace modulu **utime** pro micro:bit: https://microbit-micropython.readthedocs.io/en/latest/utime.html
+ * Specifikace modulu **utime** pro micro:bit : [https://microbit-micropython.readthedocs.io/en/latest/utime.html](https://microbit-micropython.readthedocs.io/en/latest/utime.html)
    ```
    # Chceme mít příkaz, který nám vypíše aktuální čas a nechceme přemýšlet nad moduly v pythonu
    def now():
@@ -475,7 +475,7 @@ Cyklus je kód, který se provádí opakovaně. Místo abychom vypisovali stále
 
 * **[ ROZŠIŘUJÍCÍ ]** Někdy se může stát, že ve většině případů chceme funkci volat s konkrétním nastavením a je občas to změnit. K tomu můžeme použít takzvané **defaultní hodnoty parametrů**. Ty se uvádí na konci výčtu parametrů a pokud chceme všem parametrům, které je mají nastavené, ponechat defaultní hodnotu, můžeme ji vynechat.
     Například u funkce **`now()`**, kterou jsme si definovali výše můžeme předpokládat, že nás bude nejčasteji zajímat aktuální čas, protože obvykle víme, který je den. Můžeme ji tedy definovat následující způsobem a když ji zavoláme `now()` vypíše se nám automaticky jen aktuální čas.
- * Podrobnější popis můžete nastudovat zde: https://www.w3schools.com/python/python_arguments.asp
+ * Podrobnější popis můžete nastudovat zde: [https://www.w3schools.com/python/python_arguments.asp](https://www.w3schools.com/python/python_arguments.asp)
     ```
     def now(mode="time"):                           # defaultní hodnota parametru mode je "time"
         from datetime import datetime               # modul datetime je knihovna sloužící k práci s datem a časem
@@ -492,7 +492,7 @@ Cyklus je kód, který se provádí opakovaně. Místo abychom vypisovali stále
         return actual_time                          # funkce vrátí hodnotu proměnné actual_time
     ```
 * **[ JEŠTĚ VÍCE ROZŠIŘUJÍCÍ ]** Můžete si všimnout, že stále máme problém s tím, že pokud uživatel zadá nějaký neznámý parametr, vrátí nám funkce hodnotu `None`. Jedním ze způsobů, jak to můžeme ošetřit je, že v takovém případě zavoláme funkci s defaultním parametrem. To můžeme provést pomocí takzvané rekurze, tedy že funkce zavolá samu sebe, obvykle s jiným argumentem, než mělo původní volání. Tuto možnost využívejte opatrně a pokud si nejste jisti, jak funguje, raději se jí vyhněte - při špatně napsaném algoritmu riskujete zacyklení programu a při neefektivní implementaci rekurze může dojít k zahlcení paměti (tzv. stack overflow) i u matematicky korektního algoritmu.
-  * Základní informace jsou zde: https://www.w3schools.com/python/gloss_python_function_recursion.asp
+  * Základní informace jsou zde: [https://www.w3schools.com/python/gloss_python_function_recursion.asp](https://www.w3schools.com/python/gloss_python_function_recursion.asp)
   ```
     def now(mode="time"):                           # defaultní hodnota parametru mode je "time"
         from datetime import datetime               # modul datetime je knihovna sloužící k práci s datem a časem
@@ -509,7 +509,7 @@ Cyklus je kód, který se provádí opakovaně. Místo abychom vypisovali stále
         return actual_time                          # funkce vrátí hodnotu proměnné actual_time
     ```
     **[ UPOZORNĚNÍ ]** Reálná praxe vývoje programů by situaci s neznámým argumentem s největší pravděpodobností řešila vyvoláním výjimky a chybového hlášení `ValueError`. Problematika chybových hlášení je však dalece za hranicemi rozsahu našeho kurzu. 
-    * Pokud by vás tato problematika zajímala, můžete začít například zde: https://www.w3schools.com/python/python_try_except.asp
+    * Pokud by vás tato problematika zajímala, můžete začít například zde: [https://www.w3schools.com/python/python_try_except.asp](https://www.w3schools.com/python/python_try_except.asp)
     * Pro potřeby výuky **stačí, když budete mít na zřeteli, že je třeba nějak ošetřit situace, kdy funkci zavoláme s nezamýšleným či nečekaným parametrem**. Pokud neomezíme chod funkce jen na požadované hodnoty, tak se nám v lepším případě program zhroutí, v horším se začne chovat neočekávaně.
     * Hledáním podivného chování programu se zabývají **softwaroví testeři**, kteří se obvykle snaží program přimět k podivnému chování či pádu. Poměrně dobře ilustruje náplň jejich práce následující vtip:
 
