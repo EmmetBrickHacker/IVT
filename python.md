@@ -63,9 +63,9 @@ U rozsáhlejších projektů se může hodit udržovat rozdílné části kódu 
 
 * ze všech rozšiřujících knihoven byste měli znát alespoň modul **random**:
     [https://www.w3schools.com/python/module_random.asp](https://www.w3schools.com/python/module_random.asp)
-    * **`random()`** ... vrací náhodný **float** mezi `0` a `1`
-    * **`randint()`** ... vrací náhodný **integer** ze zadaného rozsahu
-    * měli byste umět vysvětlit, co dělá následující kód:
+  * **`random()`** ... vrací náhodný **float** mezi `0` a `1`
+  * **`randint()`** ... vrací náhodný **integer** ze zadaného rozsahu
+  * měli byste umět vysvětlit, co dělá následující kód:
     ```
     from random import random, randint
     
@@ -73,7 +73,7 @@ U rozsáhlejších projektů se může hodit udržovat rozdílné části kódu 
     evaluation_2 = randint(1, 5)
     print("evaluation 1:", evaluation_1, "\nevaluation 2:", evaluation_2)
     ```
-    **[ ROZŠIŘUJÍCÍ ]**
+  * **[ ROZŠIŘUJÍCÍ ]**
     * **`uniform()`** ... vrací náhodný **float** ze zadaného rozsahu
     *Není třeba znát tuto metodu, ale je třeba vědět, že základní metoda **random()** generuje jen v rozsahu čísel 0 a 1. Případně zkuste zvážit, proč je základní metoda **random()** definována právě takto.*
 
