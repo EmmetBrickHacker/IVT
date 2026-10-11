@@ -394,20 +394,20 @@ Cyklus je kód, který se provádí opakovaně. Místo abychom vypisovali stále
 * Pro definici funkce se používá klíčové slovo **`def`** následované jménem funkce a závorkami. Takto si vytvoříme funkci, která nám vypíše aktuální datum a čas:
 **[ UPOZORNĚNÍ ]** modul **datetime** využívaný v následujících příkladech není implementován v Pythonu pro micro:bit, který využívá zjednodušený modul **utime**. 
 Specifikace modulu **utime** pro micro:bit: https://microbit-micropython.readthedocs.io/en/latest/utime.html
-```
-# Chceme mít příkaz, který nám vypíše aktuální čas a nechceme přemýšlet nad moduly v pythonu
-def now():
-    from datetime import datetime # modul datetime je knihovna sloužící k práci s datem a časem
-    
-    actual_time = datetime.now()
-    print(actual_time)
-
-```
+ ```
+ # Chceme mít příkaz, který nám vypíše aktuální čas a nechceme přemýšlet nad moduly v pythonu
+ def now():
+     from datetime import datetime # modul datetime je knihovna sloužící k práci s datem a časem
+     
+     actual_time = datetime.now()
+     print(actual_time)
+ 
+ ```
 * Funkce můžeme také modifikovat pomocí parametrů, které uvedeme do závorek - v našem případě bychom například chtěli mít možnost vypsat jenom čas, bez data, ale zachovat i možnost napsat datum. Případně vypsat jen datum.
 **[ TERMINOLOGICKÁ POZNÁMKA ]** parametr je proměnná, kterou zadáváme do funkce, argument je pak označení pro její hodnotu. Parametry se tedy objevují při definici funkce, argumenty při jejím volání
-    * `def now(mode)` ... *mode* je v následujícím příkladu parametr
-    * `now("date")` ... *"date"* by byl argument při volání funkce
-    ```
+ * `def now(mode)` ... *mode* je v následujícím příkladu parametr
+ * `now("date")` ... *"date"* by byl argument při volání funkce
+  ```
     def now(mode):
         from datetime import datetime               # modul datetime je knihovna sloužící k práci s datem a časem
 
@@ -420,7 +420,7 @@ def now():
         else:
             actual_time = f"Unknown mode. Actual datetime is {datetime.now()}"
         print(actual_time)
-    ```
+  ```
 * Ne vždy ale chceme, aby se nám výsledek vypsal, ale chceme s ním pracovat dál. Pak využijeme klíčové slovo **`return`**, které definuje, co funkce vrací na výstupu:
     ```
     def now(mode):
