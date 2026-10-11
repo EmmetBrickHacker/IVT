@@ -348,27 +348,27 @@ Cyklus je kód, který se provádí opakovaně. Místo abychom vypisovali stále
 * https://www.w3schools.com/python/python_for_loops.asp
 * Pokud známe konkrétní počet opakování předem, nejsnazší způsob, je použít cyklus `for`.
   Například pokud bychom chtěli napsat instrukce pro nakreslení čtverce, mohlo by to vypadat nějak takto:
- ```
- import turtle as t
- 
- for i in range(4):
-     t.forward(100)
-     t.left(90)
- ```
+  ```
+  import turtle as t
+  
+  for i in range(4):
+      t.forward(100)
+      t.left(90)
+  ```
 * Nejčastějším způsobem použití cyklu `for` však je, že ho chceme použít pro procházení nějaké skupiny položku po položce. Například bychom chtěli vypsat všechny Sněhurčiny trpaslíky ze seznamu `dwarfs` - pak nejprve určíme jméno proměnné do které se načte hodnota konkrétní položky a pak určíme, kde se má položka hledat:
- ```
- dwarfs = ["Prófa","Rejpal","Kejchal", "Stydlín", "Dřímal", "Štístko","Šmudla"]
- for name in dwarfs:
-     print(f"{name} jde z práce a zpívá: Ajho, ajho!")
- ```
+  ```
+  dwarfs = ["Prófa","Rejpal","Kejchal", "Stydlín", "Dřímal", "Štístko","Šmudla"]
+  for name in dwarfs:
+      print(f"{name} jde z práce a zpívá: Ajho, ajho!")
+  ```
 * **[ ROZŠIŘUJÍCÍ ]** Možná jste si všimli, že v našem příkladu s kreslením čtverce jsme vůbec nepoužili hodnotu proměnné `i`. V případech, kdy hodnotu proměnné přes kterou iterujeme vůbec nechceme použít, můžeme uvést její jméno `_` a pythonu tím řekneme, že její hodnotu nebudeme vůbec potřebovat. Náš příklad by pak vypadal takto: 
- ```
- import turtle as t
- 
- for _ in range(4):
-     t.forward(100)
-     t.left(90)
- ```
+  ```
+  import turtle as t
+  
+  for _ in range(4):
+      t.forward(100)
+      t.left(90)
+  ```
 
 ### WHILE-cyklus čili cyklus s podmínkou
 * https://www.w3schools.com/python/python_while_loops.asp
