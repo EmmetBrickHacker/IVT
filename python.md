@@ -464,7 +464,7 @@ Specifikace modulu **utime** pro micro:bit: https://microbit-micropython.readthe
 
         return roll
     ```
-    **[ ROZŠIŘUJÍCÍ ]** Všimněte si že první string zapsaný ihned pod hlavičkou funkce se v Pythonu nazývá docstring (dokumentační řetězec). Slouží k oficiální dokumentaci funkce a lze vyvolat pomocí funkce **`help()`**, které jako argument zadáte název této funkce.
+* **[ ROZŠIŘUJÍCÍ ]** Všimněte si že první string zapsaný ihned pod hlavičkou funkce se v Pythonu nazývá docstring (dokumentační řetězec). Slouží k oficiální dokumentaci funkce a lze vyvolat pomocí funkce **`help()`**, které jako argument zadáte název této funkce.
     Při zadání příkazu `help(d6plus)` se vám potom do terminálu vypíše následující:
     ```
     Help on function d6plus in module __main__:
