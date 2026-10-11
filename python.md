@@ -403,7 +403,7 @@ Cyklus je kód, který se provádí opakovaně. Místo abychom vypisovali stále
      print(actual_time)
     ```
 * Funkce můžeme také modifikovat pomocí parametrů, které uvedeme do závorek - v našem případě bychom například chtěli mít možnost vypsat jenom čas, bez data, ale zachovat i možnost napsat datum. Případně vypsat jen datum.
-**[ TERMINOLOGICKÁ POZNÁMKA ]** parametr je proměnná, kterou zadáváme do funkce, argument je pak označení pro její hodnotu. Parametry se tedy objevují při definici funkce, argumenty při jejím volání
+* **[ TERMINOLOGICKÁ POZNÁMKA ]** parametr je proměnná, kterou zadáváme do funkce, argument je pak označení pro její hodnotu. Parametry se tedy objevují při definici funkce, argumenty při jejím volání
  * `def now(mode)` ... *mode* je v následujícím příkladu parametr
  * `now("date")` ... *"date"* by byl argument při volání funkce
   ```
