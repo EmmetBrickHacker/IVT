@@ -7,13 +7,13 @@ Počítejte s tím, že většinu hodin budeme začínat čtením kódu a rozbor
 Znalosti, které nejsou povinné, ale považuji jejich znalost za užitečnou a můžete si tím zlepšit známku jsou označeny jako **[ ROZŠIŘUJÍCÍ ]**
 
 ## Doporučené studijní opory:
-https://www.w3schools.com/python/default.asp
-https://microbit-micropython.readthedocs.io/en/latest/index.html
+* https://www.w3schools.com/python/default.asp
+* https://microbit-micropython.readthedocs.io/en/latest/index.html
 * **ZA ELEMENTÁRNÍ ZNALOST POVAŽUJI**, že když něco končí **`()`** (s případnými argumenty uvnitř), jedná se o *callable* tedy *volatelný objekt*. Pro vaše potřeby můžete všechny volatelné objekty považovat za **funkce** - existují ještě *metody*, ale jsou strukturně natolik podobné, že pokud se nebudete věnovat programování hlouběji, můžete tato slova považovat téměř za synonyma.
 
 ## Moduly:
-https://www.w3schools.com/python/python_modules.asp
-Modul je v podstatě knihovna s různými strukturami, které chceme použít v programování. Můžeme si tak nahrát rozšiřující funkce, které chceme používat v kódu.
+* https://www.w3schools.com/python/python_modules.asp
+* Modul je v podstatě knihovna s různými strukturami, které chceme použít v programování. Můžeme si tak nahrát rozšiřující funkce, které chceme používat v kódu.
 Zároveň, pokud nějakou strukturu používáme v různých projektech, nemusíme jí psát pokaždé znovu, můžeme si ji dát do samostatné knihovny. Nemusíme ani využívat celou knihovnu, ale můžeme si z ní načíst jen to, co potřebujeme.
 U rozsáhlejších projektů se může hodit udržovat rozdílné části kódu v samostatných knihovnách, abychom se rychleji orientovali - to se může hodit v okamžiku, kdy budeme ve druhém ročníku programovat pomocí Pythonu micro:bit.
 * **jak vytvořit modul?** ... jakýkoli soubor končící příponou *.py 
@@ -133,7 +133,7 @@ https://www.w3schools.com/python/python_datatypes.asp
     https://www.w3schools.com/python/python_none.asp
 
 ### Stringy neboli řetězce
-https://www.w3schools.com/python/python_strings.asp
+* https://www.w3schools.com/python/python_strings.asp
 * Řetězec znaků zapíšeme tak, že ho obklopíme jednoduchými či dvojitými rovnými uvozovkami:
     ```
     day = 'friday'
@@ -175,8 +175,8 @@ https://www.w3schools.com/python/python_strings.asp
     Více informací o formátovacích typech se můžete dozvědět zde: https://www.w3schools.com/python/ref_string_format.asp
 
 ## Komentáře
-https://www.w3schools.com/python/python_comments.asp
-Začátečníky podceňovaný, přesto velmi důležitý nástroj při psaní kódu. Nepodceňujte komentáře - zkuste o kódu uvažovat tak, že si do nich zapíšete všechno, co byste potřebovali říct, abyste za půl roku, poté, co jste kód vůbec neviděli, hned věděli, co se v něm kde děje
+* https://www.w3schools.com/python/python_comments.asp
+* Začátečníky podceňovaný, přesto velmi důležitý nástroj při psaní kódu. Nepodceňujte komentáře - zkuste o kódu uvažovat tak, že si do nich zapíšete všechno, co byste potřebovali říct, abyste za půl roku, poté, co jste kód vůbec neviděli, hned věděli, co se v něm kde děje
 * komentáře mohou sloužit k vysvětlení části kódu
     ```
     # declare a variable
@@ -200,6 +200,7 @@ Začátečníky podceňovaný, přesto velmi důležitý nástroj při psaní k�
     print("The sum is:", sum)
     # print('The product is:', product)
     ```
+
 ### Víceřádkové komentáře
 V jazyce Python není definován žádný zápis určený přímo pro víceřádkový komentář. Běžně se ale využívá toho, že string, který není uložený do žádné proměnné, nebo není parametrem funkce, pak ho interpret ignoruje. To znamená, že tyto stringy lze využívat jako komentáře.
 Využívá se toho právě v případě víceřádkových stringů - někdy se můžete setkat s tím, že na začátku kódu budete mít takto shrnuto, co daná knihovna řeší.
@@ -212,7 +213,7 @@ print("Hello, World!")
 ```
 
 ## Proměnné:
-https://www.w3schools.com/python/python_variables_names.asp
+* https://www.w3schools.com/python/python_variables_names.asp
 * jak se zapisují hodnoty různých datových typů:
     ```
     name = 'Me'
@@ -227,19 +228,19 @@ Porovnejte například zápis `age`, `AGE` a `Age`
 
 ## Operátory
 ### Aritmetické operátory
-https://www.w3schools.com/python/python_operators_arithmetic.asp
+* https://www.w3schools.com/python/python_operators_arithmetic.asp
 * jak se zapisují základní aritmetické operace sčítání, odčítání, násobení dělení (operátory `+`, `-`, `*` `/`)
 * jak fungují operátory `+` a `*`, když je aplikujeme na **string**?
 * **[ ROZŠIŘUJÍCÍ ]** užitečné operace jako mocnina, celočíselné dělení a modulo (operátory `**`, `//` a `%`)
   
 ### Přiřazovací operátory
-https://www.w3schools.com/python/python_operators_assign.asp
+* https://www.w3schools.com/python/python_operators_assign.asp
 * základní přiřazení `=`
 * modifikace hodnoty: `+=`, `-=`, `*=` a `/=`
 * **[ ROZŠIŘUJÍCÍ ]** operátory `//=`, `%=` nebo `**=`
 
 ### Porovnávací operátory
-https://www.w3schools.com/python/python_operators_comparison.asp
+* https://www.w3schools.com/python/python_operators_comparison.asp
 * rovnost `==`
 (**JE TŘEBA ZNÁT ROZDÍL MEZI OPERÁTORY `=` A `==`**, je to jedna z nejčastějších chyb v zápisu kódu)
 * různé typy nerovností
@@ -251,7 +252,7 @@ https://www.w3schools.com/python/python_operators_comparison.asp
 * uveďte běžný případ použití (viz *Podmíněné příkazy* a *Cykly*)
 
 ### Logické operátory
-https://www.w3schools.com/python/python_operators_logical.asp
+* https://www.w3schools.com/python/python_operators_logical.asp
 * logické operátory určují jaká **logická funkce** má být provedena se zadaným výrazem.
   * **logická funkce** je funkce, která má za vstupní výrazy parametry, kterým lze přiřadit logickou hodnotu (v Pythonu hodnoty mohou být `True` nebo `False`), a vrací opět logickou hodnotu.
 * operátory 
@@ -269,9 +270,9 @@ https://www.w3schools.com/python/python_operators_logical.asp
   * **NoneType** (hodnota `None`) - vždy `False`
 
 ## Podmíněné příkazy:
-https://www.w3schools.com/python/python_conditions.asp
-Podmíněné příkazy jsou nejdůležitější nástroj větvení kódu. 
-**[ TERMINOLOGICKÁ POZNÁMKA ]** Podmínkou rozumíme jakýkoliv výraz, kterému lze přiřadit pravdivostní hodnotu.
+* https://www.w3schools.com/python/python_conditions.asp
+* Podmíněné příkazy jsou nejdůležitější nástroj větvení kódu. 
+* **[ TERMINOLOGICKÁ POZNÁMKA ]** Podmínkou rozumíme jakýkoliv výraz, kterému lze přiřadit pravdivostní hodnotu.
 
 * Základní klíčové slovo je **`if`** po něm následuje **podmínka** a **`:`**,
     další řádek odsadíme a zapíšeme, co se má stát při splnění podmínky. Toto je jediná povinná část podmínky
@@ -298,22 +299,22 @@ Podmíněné příkazy jsou nejdůležitější nástroj větvení kódu.
     else:
         print("x je v rozmezí")
     ```
-Příklad plně rozvinutého podmíněného příkazu
-```
-import math
-
-D = b**2 - 4 * a * c
+* Příklad plně rozvinutého podmíněného příkazu:
+    ```
+    import math
     
-if D > 0:
-    x1 = (-b + math.sqrt(D)) / (2 * a)
-    x2 = (-b - math.sqrt(D)) / (2 * a)
-    print(f"Two real roots: x1 = {x1}, x2 = {x2}")
-elif D == 0:
-    x = -b / (2 * a)
-    print(f"Real double root: x = {x}.")    
-else:
-    print("No real root.")
-```
+    D = b**2 - 4 * a * c
+        
+    if D > 0:
+        x1 = (-b + math.sqrt(D)) / (2 * a)
+        x2 = (-b - math.sqrt(D)) / (2 * a)
+        print(f"Two real roots: x1 = {x1}, x2 = {x2}")
+    elif D == 0:
+        x = -b / (2 * a)
+        print(f"Real double root: x = {x}.")    
+    else:
+        print("No real root.")
+    ```
 ### Vnořené podmíněné příkazy
 Je dobré připomenout, že dovnitř podmíněných příkazů lze vkládat jiné podmíněné příkazy. Všiměte si, že úroveň vnoření je dána odsazením zleva, takzvanou indentací, kterých lze řadit více za sebe a podle toho poznáme, jak hluboko jsme ve struktuře kódu.
 ```
@@ -344,52 +345,52 @@ else:
 Cyklus je kód, který se provádí opakovaně. Místo abychom vypisovali stále dokola ty samé kroky, tak sepišeme jednu sadu (jeden průchod cyklu) a určíme, kolikrát se má vnitřek cyklu opakovat.
 
 ### FOR-cyklus čili cyklus s konkrétním počtem opakování
-https://www.w3schools.com/python/python_for_loops.asp
-Pokud známe konkrétní počet opakování předem, nejsnazší způsob, je použít cyklus `for`.
-Například pokud bychom chtěli napsat instrukce pro nakreslení čtverce, mohlo by to vypadat nějak takto:
-```
-import turtle as t
-
-for i in range(4):
-    t.forward(100)
-    t.left(90)
-```
-Nejčastějším způsobem použití cyklu `for` však je, že ho chceme použít pro procházení nějaké skupiny položku po položce. Například bychom chtěli vypsat všechny Sněhurčiny trpaslíky ze seznamu `dwarfs` - pak nejprve určíme jméno proměnné do které se načte hodnota konkrétní položky a pak určíme, kde se má položka hledat:
-```
-dwarfs = ["Prófa","Rejpal","Kejchal", "Stydlín", "Dřímal", "Štístko","Šmudla"]
-for name in dwarfs:
-    print(f"{name} jde z práce a zpívá: Ajho, ajho!")
-```
-**[ ROZŠIŘUJÍCÍ ]** Možná jste si všimli, že v našem příkladu s kreslením čtverce jsme vůbec nepoužili hodnotu proměnné `i`. V případech, kdy hodnotu proměnné přes kterou iterujeme vůbec nechceme použít, můžeme uvést její jméno `_` a pythonu tím řekneme, že její hodnotu nebudeme vůbec potřebovat. Náš příklad by pak vypadal takto: 
-```
-import turtle as t
-
-for _ in range(4):
-    t.forward(100)
-    t.left(90)
-```
+* https://www.w3schools.com/python/python_for_loops.asp
+* Pokud známe konkrétní počet opakování předem, nejsnazší způsob, je použít cyklus `for`.
+  Například pokud bychom chtěli napsat instrukce pro nakreslení čtverce, mohlo by to vypadat nějak takto:
+ ```
+ import turtle as t
+ 
+ for i in range(4):
+     t.forward(100)
+     t.left(90)
+ ```
+* Nejčastějším způsobem použití cyklu `for` však je, že ho chceme použít pro procházení nějaké skupiny položku po položce. Například bychom chtěli vypsat všechny Sněhurčiny trpaslíky ze seznamu `dwarfs` - pak nejprve určíme jméno proměnné do které se načte hodnota konkrétní položky a pak určíme, kde se má položka hledat:
+ ```
+ dwarfs = ["Prófa","Rejpal","Kejchal", "Stydlín", "Dřímal", "Štístko","Šmudla"]
+ for name in dwarfs:
+     print(f"{name} jde z práce a zpívá: Ajho, ajho!")
+ ```
+* **[ ROZŠIŘUJÍCÍ ]** Možná jste si všimli, že v našem příkladu s kreslením čtverce jsme vůbec nepoužili hodnotu proměnné `i`. V případech, kdy hodnotu proměnné přes kterou iterujeme vůbec nechceme použít, můžeme uvést její jméno `_` a pythonu tím řekneme, že její hodnotu nebudeme vůbec potřebovat. Náš příklad by pak vypadal takto: 
+ ```
+ import turtle as t
+ 
+ for _ in range(4):
+     t.forward(100)
+     t.left(90)
+ ```
 
 ### WHILE-cyklus čili cyklus s podmínkou
-https://www.w3schools.com/python/python_while_loops.asp
-Někdy se může stát, že neznáme konkrétní počet opakování, jen známe okolnosti, za kterých máme stále pokračovat, případně kdy skončit. Pro takové situace použijeme cyklus `while` za který doplníme podmínku, kterou zkontroluje při každém průchodu a pokud je pravdivá provede další průchod cyklem.
-Hezkým příkladem pro použití byl hod kostkou ve hře *Člověče nezlob se!* kde se hází znovu, když padně 6. Všimněte si, že když podmínka nebude splněna hned na začátku, vnitřek cyklu se vůbec neprovede.
-```
-from random import randint
-# budeme potřebovat generátor náhodných čísel
-
-roll = randint(1, 6) # samotný hod
-bonus = 0            # čítač bonusových hodů
-
-while roll == 6:     # když padne 6 házej znovu
-    bonus += 1
-    roll = randint(1, 6)
-
-roll += 6 * bonus    # konečný výsledek hodu
-```
+* https://www.w3schools.com/python/python_while_loops.asp
+* Někdy se může stát, že neznáme konkrétní počet opakování, jen známe okolnosti, za kterých máme stále pokračovat, případně kdy skončit. Pro takové situace použijeme cyklus `while` za který doplníme podmínku, kterou zkontroluje při každém průchodu a pokud je pravdivá provede další průchod cyklem.
+ Hezkým příkladem pro použití byl hod kostkou ve hře *Člověče nezlob se!* kde se hází znovu, když padně 6. Všimněte si, že když podmínka nebude splněna hned na začátku, vnitřek cyklu se vůbec neprovede.
+ ```
+ from random import randint
+ # budeme potřebovat generátor náhodných čísel
+ 
+ roll = randint(1, 6) # samotný hod
+ bonus = 0            # čítač bonusových hodů
+ 
+ while roll == 6:     # když padne 6 házej znovu
+     bonus += 1
+     roll = randint(1, 6)
+ 
+ roll += 6 * bonus    # konečný výsledek hodu
+ ```
 
 ## Definice funkcí
-https://www.w3schools.com/python/python_functions.asp
-Některé části procedury chceme vykonávat častěji a místo abychom pořád dokola opakovali ten samý kód, můžeme si je uložit jako funkce. Tím zajistíme, že kód bude jen na jednom místě a pokud bychom potřebovali upravit jeho mechanismus, nemusíme se bát, že ho někde zapomeneme opravit.
+* https://www.w3schools.com/python/python_functions.asp
+* Některé části procedury chceme vykonávat častěji a místo abychom pořád dokola opakovali ten samý kód, můžeme si je uložit jako funkce. Tím zajistíme, že kód bude jen na jednom místě a pokud bychom potřebovali upravit jeho mechanismus, nemusíme se bát, že ho někde zapomeneme opravit.
 * Pro definici funkce se používá klíčové slovo **`def`** následované jménem funkce a závorkami. Takto si vytvoříme funkci, která nám vypíše aktuální datum a čas:
 **[ UPOZORNĚNÍ ]** modul **datetime** využívaný v následujících příkladech není implementován v Pythonu pro micro:bit, který využívá zjednodušený modul **utime**. 
 Specifikace modulu **utime** pro micro:bit: https://microbit-micropython.readthedocs.io/en/latest/utime.html
@@ -444,7 +445,7 @@ def now():
         celsius = (fahrenheit - 32) * 5 / 9
         return celsius
     ```
-  * Když už jsme si vysvětlili co dělá klíčové slovo **`return`**, můžeme si definovat hod kostkou z našeho příkladu u WHILE-cyklu jako funkci:
+* Když už jsme si vysvětlili co dělá klíčové slovo **`return`**, můžeme si definovat hod kostkou z našeho příkladu u WHILE-cyklu jako funkci:
     ```
     def d6plus():
         """ 
@@ -474,9 +475,9 @@ def now():
         šestky hází znovu a hodnota se přičítá k výsledku.
     ```
 
-  * **[ ROZŠIŘUJÍCÍ ]** Někdy se může stát, že ve většině případů chceme funkci volat s konkrétním nastavením a je občas to změnit. K tomu můžeme použít takzvané **defaultní hodnoty parametrů**. Ty se uvádí na konci výčtu parametrů a pokud chceme všem parametrům, které je mají nastavené, ponechat defaultní hodnotu, můžeme ji vynechat.
+* **[ ROZŠIŘUJÍCÍ ]** Někdy se může stát, že ve většině případů chceme funkci volat s konkrétním nastavením a je občas to změnit. K tomu můžeme použít takzvané **defaultní hodnoty parametrů**. Ty se uvádí na konci výčtu parametrů a pokud chceme všem parametrům, které je mají nastavené, ponechat defaultní hodnotu, můžeme ji vynechat.
     Například u funkce **`now()`**, kterou jsme si definovali výše můžeme předpokládat, že nás bude nejčasteji zajímat aktuální čas, protože obvykle víme, který je den. Můžeme ji tedy definovat následující způsobem a když ji zavoláme `now()` vypíše se nám automaticky jen aktuální čas.
-    Podrobnější popis můžete nastudovat zde: https://www.w3schools.com/python/python_arguments.asp
+ * Podrobnější popis můžete nastudovat zde: https://www.w3schools.com/python/python_arguments.asp
     ```
     def now(mode="time"):                           # defaultní hodnota parametru mode je "time"
         from datetime import datetime               # modul datetime je knihovna sloužící k práci s datem a časem
@@ -492,8 +493,8 @@ def now():
 
         return actual_time                          # funkce vrátí hodnotu proměnné actual_time
     ```
-  * **[ JEŠTĚ VÍCE ROZŠIŘUJÍCÍ ]** Můžete si všimnout, že stále máme problém s tím, že pokud uživatel zadá nějaký neznámý parametr, vrátí nám funkce hodnotu `None`. Jedním ze způsobů, jak to můžeme ošetřit je, že v takovém případě zavoláme funkci s defaultním parametrem. To můžeme provést pomocí takzvané rekurze, tedy že funkce zavolá samu sebe, obvykle s jiným argumentem, než mělo původní volání. Tuto možnost využívejte opatrně a pokud si nejste jisti, jak funguje, raději se jí vyhněte - při špatně napsaném algoritmu riskujete zacyklení programu a při neefektivní implementaci rekurze může dojít k zahlcení paměti (tzv. stack overflow) i u matematicky korektního algoritmu.
-  Základní informace jsou zde: https://www.w3schools.com/python/gloss_python_function_recursion.asp
+* **[ JEŠTĚ VÍCE ROZŠIŘUJÍCÍ ]** Můžete si všimnout, že stále máme problém s tím, že pokud uživatel zadá nějaký neznámý parametr, vrátí nám funkce hodnotu `None`. Jedním ze způsobů, jak to můžeme ošetřit je, že v takovém případě zavoláme funkci s defaultním parametrem. To můžeme provést pomocí takzvané rekurze, tedy že funkce zavolá samu sebe, obvykle s jiným argumentem, než mělo původní volání. Tuto možnost využívejte opatrně a pokud si nejste jisti, jak funguje, raději se jí vyhněte - při špatně napsaném algoritmu riskujete zacyklení programu a při neefektivní implementaci rekurze může dojít k zahlcení paměti (tzv. stack overflow) i u matematicky korektního algoritmu.
+  * Základní informace jsou zde: https://www.w3schools.com/python/gloss_python_function_recursion.asp
   ```
     def now(mode="time"):                           # defaultní hodnota parametru mode je "time"
         from datetime import datetime               # modul datetime je knihovna sloužící k práci s datem a časem
@@ -515,6 +516,7 @@ def now():
     * Hledáním podivného chování programu se zabývají **softwaroví testeři**, kteří se obvykle snaží program přimět k podivnému chování či pádu. Poměrně dobře ilustruje náplň jejich práce následující vtip:
 
         > **Softwarový tester vejde do baru.**
+        > 
         > Vběhne do baru.  
         > Přikrade se do baru.  
         > Vtančí do baru.  
@@ -538,6 +540,7 @@ def now():
         > Tester ukončí testování baru.
         > 
         > **Do baru vstoupí skutečný zákazník**
+        > 
         > Zákazník se zeptá barmana: „Mohl bych si u vás zajít na toaletu?“
         > Barman odejde do skladu. Po chvili se vrátí s toaletní mísou,
         > postaví ji na bar a odpoví: „Zde je vaše objednávka na pivo.“
@@ -556,9 +559,12 @@ def now():
             Funkce hledá jakékoliv známé klíčové slovo v textu od zákazníka.
             Rozpoznanou věc rovnou doručí na bar.
             """
-            from storage import inventory   # z vymyšleného modulu storage si importujeme seznam věcí inventory
+            from storage import inventory
+            # z vymyšleného modulu storage si importujeme seznam věcí inventory
             # inventory je datová struktura slovník (dictionary) ve formátu "položka":množství
-            from parser import items        # vymyšlený modul, který nám ze zadané otázky vytáhne klíčová slova
+        
+            from parser import items
+            # vymyšlený modul, který nám ze zadané otázky vytáhne klíčová slova
             # smyšlená funkce items() vrací list, kde každá položka 
             # bude dvojice s názvem věci jako první položka a kvantitou
             # jako druhou položkou. 
