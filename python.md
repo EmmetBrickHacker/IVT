@@ -440,7 +440,9 @@ Cyklus je kód, který se provádí opakovaně. Místo abychom vypisovali stále
     ```
     # Chceme napříkald funkci, která nám bude převádět stupně Fahrenheita na stupně Celsia:
 
-    def f2c(fahrenheit):                            # jméno funkce doporučuji zvolit takové, aby bylo srozumitelné a pokud ji plánujeme psát často, může být výhodnější zvolit krátké jméno
+    def f2c(fahrenheit):                            # jméno funkce doporučuji zvolit takové,
+                                                    # aby bylo srozumitelné a pokud ji plánujeme
+                                                    # psát často, může být výhodnější zvolit krátké jméno
         celsius = (fahrenheit - 32) * 5 / 9
         return celsius
     ```
@@ -487,7 +489,7 @@ Cyklus je kód, který se provádí opakovaně. Místo abychom vypisovali stále
         elif mode == "full":
             actual_time = datetime.now()
         else:
-            actual_time = None                     # na neznámý vstup nevíme jak reagovat
+            actual_time = None                      # na neznámý vstup nevíme jak reagovat
 
         return actual_time                          # funkce vrátí hodnotu proměnné actual_time
     ```
@@ -504,7 +506,8 @@ Cyklus je kód, který se provádí opakovaně. Místo abychom vypisovali stále
         elif mode == "full":
             actual_time = datetime.now()
         else:
-            actual_time = now()                     # na neznámý vstup reagujeme voláním defaultního parametru pomocí rekurze
+            actual_time = now()                     # na neznámý vstup reagujeme
+                                                    # voláním defaultního parametru pomocí rekurze
 
         return actual_time                          # funkce vrátí hodnotu proměnné actual_time
     ```
@@ -587,7 +590,11 @@ Cyklus je kód, který se provádí opakovaně. Místo abychom vypisovali stále
                     elif item[1] > inventory[item[0]]:  # pokud je objednávka větší než skladové zásoby
                         partial_response = f"Položku {item[0]} máme už jen v počtu {inventory[item[0]]} ks."
                     elif item[1] > 5:
-                        partial_response = f"Nemáme dost nádobí, abychom mohli hostům donést tak velkou objednávku položky {item[0]} najednou. Ale mohu vám donést pro začátek 5 ks a pak si můžete objednat další."
+                        partial_response = (
+                            f"Nemáme dost nádobí, abychom mohli hostům donést tak velkou "
+                            f"objednávku položky {item[0]} najednou. Ale mohu vám donést "
+                            f"pro začátek 5 ks a pak si můžete objednat další."
+                        )        # Využití implicitního řetězení stringů v závorce pro zapssání dlohouhého stringu
                     else:
                         partial_response = f"Zde je vaše objednávka na {item[0]}"
                         if item[1] > 1: 
